@@ -1,0 +1,26 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: floralwhite !important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.forms {
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    box-shadow: 0 0 20px darkgrey;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.angular {
+    font-family: "Helvetica Neue";
+    color: red;
+}
+
+
