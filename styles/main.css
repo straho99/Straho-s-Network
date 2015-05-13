@@ -1,3 +1,5 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     background-color: floralwhite !important;
@@ -21,6 +23,10 @@ h1 {
 .angular {
     font-family: "Helvetica Neue";
     color: red;
+}
+
+.menu-icon {
+    font-size: 1.5em;
 }
 
 
