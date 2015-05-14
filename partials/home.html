@@ -10,13 +10,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">User photo</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Name <span class="sr-only">(current)</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-comment menu-icon"></span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user menu-icon"></span></a></li>
                     <li><a href="#/profile"><span class="glyphicon glyphicon-wrench menu-icon"></span></a></li>
@@ -27,7 +25,6 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             </div>
         </div>
@@ -36,7 +33,8 @@
 <!--header end-->
 
 <!--Public screen-->
-<div class="row">
+<!--TODO: implement cover photo in the user header - how???-->
+<div class="row user-cover">
     <div class="col-md-3"></div>
     <div class="col-md-6 page-header">
         <h1>A somewhat <span class="angular">Angular</span> Social Network<br/><small>Welcome!</small></h1>
@@ -112,3 +110,16 @@
     <!--End of Register form-->
 </div>
 <!--Public screen end-->
+
+<!--User screen - shown when there is a logged user-->
+<!--TODO: implement cover photo in the user header - how???-->
+<div class="row user-cover">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 page-header">
+        <h1>News feed</h1>
+        <small>
+            <img src="img/kalin.jpg" class="img-rounded img-thumbnail"/>
+            <a href="#/profile">Kalin Ruychev</a>
+        </small>
+    </div>
+</div>
