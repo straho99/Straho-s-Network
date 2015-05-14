@@ -62,12 +62,25 @@ table {
     width: 50px;
 }
 
+.img-thumbnail-small {
+    width: 35px;
+}
+
 . post-container {
     display: block;
 }
 
 td:nth-child(1) {
     width: 10%;
+}
+
+.user-preview-container {
+    width: 25%;
+    height: 10em;
+}
+
+.users-search-container {
+    width: 15%;
 }
 
 
