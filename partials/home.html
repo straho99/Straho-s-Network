@@ -19,8 +19,8 @@
                     <li class="active"><a href="#">Name <span class="sr-only">(current)</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-comment menu-icon"></span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user menu-icon"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-wrench menu-icon"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-lock menu-icon"></span></a></li>
+                    <li><a href="#/profile"><span class="glyphicon glyphicon-wrench menu-icon"></span></a></li>
+                    <li><a href="#/profile/password"><span class="glyphicon glyphicon-lock menu-icon"></span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-off menu-icon"></span></a></li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
@@ -35,80 +35,80 @@
 </header>
 <!--header end-->
 
-<div class="col-md-12">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 page-header">
-            <h1>A somewhat <span class="angular">Angular</span> Social Network<br/><small>Welcome!</small></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-2"></div>
-        <!--Login form-->
-        <form class="col-md-4 forms" name="loginForm">
-            <div class="form-group" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
-                <label>Username:</label>
-                <input type="text" name="username" class="form-control" ng-model="user.name" required placeholder="Username">
-                <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="help-block">Username is required.</p>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
-                <label>Password:</label>
-                <input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password">
-                <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password is required.</p>
-            </div>
-
-            <input type="submit" class="btn btn-primary" value="Login" ng-click="login(user, loginForm)"/>
-        </form>
-        <!--End of Login form-->
-
-        <!--Register form-->
-        <form class="col-md-4 forms" name="registerForm">
-            <div class="form-group" ng-class="{ 'has-error' : registerForm.username.$invalid && !registerForm.username.$pristine }">
-                <label>Username:</label>
-                <input type="text" name="username" class="form-control" ng-model="user.name" required placeholder="Username">
-                <p ng-show="registerForm.username.$invalid && !registerForm.username.$pristine" class="help-block">Username is required.</p>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
-                <label>Password:</label>
-                <input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password">
-                <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password is required.</p>
-
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : loginForm.confirmPassword.$invalid && !loginForm.confirmPassword.$pristine }">
-                <label>Confirm password:</label>
-                <input type="password" required name="confirmPassword" class="form-control" ng-model="user.confirmPassword" placeholder="Password">
-                <p ng-show="loginForm.confirmPassword.$invalid && !loginForm.confirmPassword.$pristine" class="help-block">Confirming the password is required.</p>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && !registerForm.name.$pristine }">
-                <label>Name:</label>
-                <input type="text" name="name" class="form-control" ng-model="user.name" required placeholder="Name">
-                <p ng-show="registerForm.name.$invalid && !registerForm.name.$pristine" class="help-block">Name is required.</p>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : registerForm.mail.$invalid && !registerForm.mail.$pristine }">
-                <label>Email:</label>
-                <input type="email" name="mail" class="form-control" ng-model="user.mail" required placeholder="Email">
-                <p ng-show="registerForm.mail.$invalid && !registerForm.mail.$pristine" class="help-block">Invalid email.</p>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error' : registerForm.gender.$invalid && !registerForm.gender.$pristine }">
-                <label>Gender:</label>
-                <p>
-                    <input type="radio" checked="true" name="gender" value="male" ng-model="user.gender"> Male
-                    <input type="radio" name="gender" value="female" ng-model="user.gender"> Female
-                    <input type="radio" name="gender" value="other" ng-model="user.gender"> Other
-                </p>
-            </div>
-
-            <input type="submit" class="btn btn-primary" value="Register" ng-click="register(user, registerForm)"/>
-        </form>
-
-        <div class="col-md-2"></div>
-        <!--End of Register form-->
+<!--Public screen-->
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 page-header">
+        <h1>A somewhat <span class="angular">Angular</span> Social Network<br/><small>Welcome!</small></h1>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <!--Login form-->
+    <form class="col-md-4 forms" name="loginForm">
+        <div class="form-group" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+            <label>Username:</label>
+            <input type="text" name="username" class="form-control" ng-model="user.name" required>
+            <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="help-block">Username is required.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+            <label>Password:</label>
+            <input type="password" required name="password" class="form-control" ng-model="user.password">
+            <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password is required.</p>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Login" ng-click="login(user, loginForm)"/>
+    </form>
+    <!--End of Login form-->
+
+    <!--Register form-->
+    <form class="col-md-4 forms" name="registerForm">
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine }">
+            <label>Username:</label>
+            <input type="text" name="registerUsername" class="form-control" ng-model="user.registerUsername" required>
+            <p ng-show="registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine" class="help-block">Username is missing.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine }">
+            <label>Password:</label>
+            <input type="password" required name="registerPassword" class="form-control" ng-model="user.registerPassword">
+            <p ng-show="registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine" class="help-block">Password is missing.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine }">
+            <label>Confirm password:</label>
+            <input type="password" required name="confirmPassword" class="form-control" ng-model="user.confirmPassword">
+            <p ng-show="registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine" class="help-block">Please, confirm the password.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && !registerForm.name.$pristine }">
+            <label>Name:</label>
+            <input type="text" name="name" class="form-control" ng-model="user.name" required>
+            <p ng-show="registerForm.name.$invalid && !registerForm.name.$pristine" class="help-block">Name is missing.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.mail.$invalid && !registerForm.mail.$pristine }">
+            <label>Email:</label>
+            <input type="email" name="mail" class="form-control" ng-model="user.mail" required>
+            <p ng-show="registerForm.mail.$invalid && !registerForm.mail.$pristine" class="help-block">Invalid and/or missing email.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.gender.$invalid && !registerForm.gender.$pristine }">
+            <label>Gender:</label>
+            <p>
+                <!--TODO: solve the issue with the non-checked default radio button-->
+                <input type="radio" checked="true" name="gender" value="male" ng-model="user.gender.male"> Male
+                <input type="radio" name="gender" value="female" ng-model="user.gender.female"> Female
+                <input type="radio" name="gender" value="other" ng-model="user.gender.other"> Other
+            </p>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Register" ng-click="register(user, registerForm)"/>
+    </form>
+
+    <div class="col-md-2"></div>
+    <!--End of Register form-->
+</div>
+<!--Public screen end-->
