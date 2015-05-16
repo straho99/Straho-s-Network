@@ -1,165 +1,55 @@
 'use strict';
 
-socialNetwork.factory('postsData', function postsData($http, $q, $log, baseServiceUrl) {
+socialNetwork.factory('postsData', function postsData($http, requester, baseServiceUrl) {
     var serviceUrl = baseServiceUrl + 'Posts';
 
     function getPostById(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'GET',
-                url: serviceUrl + '/' + id
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('GET', serviceUrl + '/' + id);
     }
 
     function getPostDetailedLikes(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'GET',
-                url: serviceUrl + '/' + id + '/likes'
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('GET', serviceUrl + '/' + id + '/likes');
     }
 
     function getPostPreviewLikes(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'GET',
-                url: serviceUrl + '/' + id + '/likes/preview'
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('GET', serviceUrl + '/' + id + '/likes/preview');
     }
 
     function addPost(content, username) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'POST',
-                url: baseServiceUrl + 'posts',
-                headers: {
-                    postContent: content,
-                    username: username
-                }
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
+        var headers = {
+            postContent: content,
+            username: username
+        };
 
-        return deferred.promise;
+        return requester('POST', baseServiceUrl + 'posts', headers);
     }
 
     function editPostById(content, id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'PUT',
-                url: serviceUrl + '/' + id,
-                headers: {
-                    postContent: content
-                }
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
+        var headers = {
+            postContent: content
+        };
 
-        return deferred.promise;
+        return requester('PUT', serviceUrl + '/' + id, headers);
     }
 
     function deletePostById(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'DELETE',
-                url: serviceUrl + '/' + id
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('DELETE', serviceUrl + '/' + id);
     }
 
     function likePostById(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'POST',
-                url: serviceUrl + '/' + id + '/likes'
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('POST', serviceUrl + '/' + id + '/likes');
     }
 
     function unlikePostById(id) {
-        var deferred = $q.defer();
 
-        $http(
-            {
-                method: 'DELETE',
-                url: serviceUrl + '/' + id + '/likes'
-            })
-            .success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            })
-            .error(function (data, status, headers, config) {
-                $log.error(data);
-                deferred.reject(data);
-            });
-
-        return deferred.promise;
+        return requester('DELETE', serviceUrl + '/' + id + '/likes');
     }
 
     return {
@@ -172,4 +62,4 @@ socialNetwork.factory('postsData', function postsData($http, $q, $log, baseServi
         likePostById: likePostById,
         unlikePostById: unlikePostById
     }
-})
+});
