@@ -1,32 +1,31 @@
-<!--Register form-->
-<form class="col-md-4 forms" name="registerForm">
+<form class="forms" name="registerForm">
     <div class="form-group" ng-class="{ 'has-error' : registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine }">
         <label>Username:</label>
-        <input type="text" name="registerUsername" class="form-control" ng-model="user.registerUsername" required>
+        <input type="text" name="registerUsername" class="form-control input-sm" ng-model="user.registerUsername" required>
         <p ng-show="registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine" class="help-block">Username is missing.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine }">
         <label>Password:</label>
-        <input type="password" required name="registerPassword" class="form-control" ng-model="user.registerPassword">
+        <input type="password" required name="registerPassword" class="form-control input-sm" ng-model="user.registerPassword">
         <p ng-show="registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine" class="help-block">Password is missing.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine }">
         <label>Confirm password:</label>
-        <input type="password" required name="confirmPassword" class="form-control" ng-model="user.confirmPassword">
+        <input type="password" required name="confirmPassword" class="form-control input-sm" ng-model="user.confirmPassword">
         <p ng-show="registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine" class="help-block">Please, confirm the password.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && !registerForm.name.$pristine }">
         <label>Name:</label>
-        <input type="text" name="name" class="form-control" ng-model="user.name" required>
+        <input type="text" name="name" class="form-control input-sm" ng-model="user.name" required>
         <p ng-show="registerForm.name.$invalid && !registerForm.name.$pristine" class="help-block">Name is missing.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.mail.$invalid && !registerForm.mail.$pristine }">
         <label>Email:</label>
-        <input type="email" name="mail" class="form-control" ng-model="user.mail" required>
+        <input type="email" name="mail" class="form-control input-sm" ng-model="user.mail" required>
         <p ng-show="registerForm.mail.$invalid && !registerForm.mail.$pristine" class="help-block">Invalid and/or missing email.</p>
     </div>
 
@@ -41,5 +40,5 @@
     </div>
 
     <input type="submit" class="btn btn-primary" value="Register" ng-click="register(user, registerForm)"/>
+    <button class="btn btn-default" ng-click="cancelRegister()">Cancel</button>
 </form>
-<!--End of Register form-->
