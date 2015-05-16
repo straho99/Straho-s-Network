@@ -50,3 +50,5 @@ socialNetwork.config(['$routeProvider',
                 redirectTo: '/welcome'
             });
     }]);
+
+socialNetwork.constant('baseServiceUrl', 'http://softuni-social-network.azurewebsites.net/api/');
