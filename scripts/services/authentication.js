@@ -37,7 +37,6 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
     service.setCredentials = function (serverData) {
         localStorage['accessToken'] = serverData.access_token;
         localStorage['username'] = serverData.userName;
-
     };
 
     service.getUserName = function () {
@@ -56,6 +55,22 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
 
     service.isLogged = function () {
         return localStorage['accessToken'];
+    };
+
+    service.setName = function (name) {
+        localStorage['name'] = name;
+    };
+
+    service.getName = function () {
+        return localStorage['name'];
+    };
+
+    service.setProfileImageData = function (profileImageData) {
+        localStorage['profileImageData'] = profileImageData;
+    };
+
+    service.getProfileImageData = function () {
+        return localStorage['profileImageData'];
     };
 
     return service;

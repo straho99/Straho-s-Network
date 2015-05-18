@@ -1,0 +1,64 @@
+<form name="editProfileForm" class="forms">
+    <div class="row">
+        <div class="col-md-5">
+            <fieldset>
+                <label>Profile photo:</label><br/>
+                <a href="#" class="thumbnail">
+                    <img ng-src="{{profileImageData}}" alt="Select profile photo.">
+                </a>
+                <p class="label label-info">Allowed format: .jpg, Limit: 1024kb</p><br/><br/>
+                <button class="btn btn-default" ng-click="getProfileImage()">Upload</button>
+            </fieldset>
+        </div>
+
+        <div class="col-md-7">
+            <fieldset>
+                <div class="form-group"
+                     ng-class="{ 'has-error' : editProfileForm.name.$invalid && !editProfileForm.name.$pristine }">
+                    <label>Name:</label>
+                    <input type="text" required name="name" class="form-control" ng-model="{{name}}">
+
+                    <p ng-show="editProfileForm.name.$invalid && !editProfileForm.name.$pristine" class="help-block">
+                        Name is missing.</p>
+                </div>
+
+                <div class="form-group"
+                     ng-class="{ 'has-error' : editProfileForm.email.$invalid && !editProfileForm.email.$pristine }">
+                    <label>Email:</label>
+                    <input type="email" name="email" class="form-control" required value="email">
+
+                    <p ng-show="editProfileForm.email.$invalid && !editProfileForm.email.$pristine" class="help-block">
+                        Invalid and/or missing email.</p>
+                </div>
+
+                <div class="form-group"
+                     ng-class="{ 'has-error' : editProfileForm.gender.$invalid && !editProfileForm.gender.$pristine }">
+                    <label>Gender:</label>
+
+                    <p>
+                        <input type="radio" ng-model="gender.male" name="gender" value="male" ng-model="profileData.gender">
+                        Male
+                        <input type="radio" name="gender" ng-model="{{gender.female}}" value="female" ng-model="profileData.gender"> Female
+                        <input type="radio" name="gender" ng-model="{{gender.other}}" value="other" ng-model="profileData.gender"> Other
+                    </p>
+                </div>
+
+                <label>Cover photo:</label><br/>
+                <a href="#" class="thumbnail">
+                    <img ng-src="{{coverImageData}}" alt="Select cover photo.">
+                </a>
+
+                <p class="label label-info">Limit: 1024kb</p><br/><br/>
+                <button class="btn btn-default" ng-click="getCoverImage()">Upload</button>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 pull-right">
+            <input type="submit" class="btn btn-primary" value="Save Changes"
+                   ng-click="editProfile(profileData, editProfileForm)"/>
+            <button class="btn btn-default" ng-click="cancelSave()">Cancel</button>
+        </div>
+    </div>
+</form>
