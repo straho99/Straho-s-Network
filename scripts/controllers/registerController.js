@@ -10,7 +10,6 @@ socialNetwork.controller('RegisterController',
                         $location.path('/users/' + authentication.getUserName());
                     },
                     function errorHandler(error) {
-                        console.log(error);
                         notify.error("Registration failed.");
                     }
                 )

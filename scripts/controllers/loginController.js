@@ -10,7 +10,6 @@ socialNetwork.controller('LoginController',
                         $location.path('/users/' + authentication.getUserName());
                     },
                     function errorHandler(error) {
-                        console.log(error);
                         notify.error("Login failed.");
                     }
                 )
