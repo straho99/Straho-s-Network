@@ -36,7 +36,7 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
 
     service.setCredentials = function (serverData) {
         localStorage['accessToken'] = serverData.access_token;
-        localStorage['username'] = serverData.username;
+        localStorage['username'] = serverData.userName;
 
     };
 

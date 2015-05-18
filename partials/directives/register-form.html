@@ -1,14 +1,14 @@
 <form class="forms" name="registerForm">
-    <div class="form-group" ng-class="{ 'has-error' : registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine }">
+    <div class="form-group" ng-class="{ 'has-error' : registerForm.username.$invalid && !registerForm.username.$pristine }">
         <label>Username:</label>
-        <input type="text" name="registerUsername" class="form-control input-sm" ng-model="user.registerUsername" required>
-        <p ng-show="registerForm.registerUsername.$invalid && !registerForm.registerUsername.$pristine" class="help-block">Username is missing.</p>
+        <input type="text" name="username" class="form-control input-sm" ng-model="user.username" required>
+        <p ng-show="registerForm.username.$invalid && !registerForm.username.$pristine" class="help-block">Username is missing.</p>
     </div>
 
-    <div class="form-group" ng-class="{ 'has-error' : registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine }">
+    <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
         <label>Password:</label>
-        <input type="password" required name="registerPassword" class="form-control input-sm" ng-model="user.registerPassword">
-        <p ng-show="registerForm.registerPassword.$invalid && !registerForm.registerPassword.$pristine" class="help-block">Password is missing.</p>
+        <input type="password" required name="password" class="form-control input-sm" ng-model="user.password">
+        <p ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="help-block">Password is missing.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine }">
@@ -23,19 +23,19 @@
         <p ng-show="registerForm.name.$invalid && !registerForm.name.$pristine" class="help-block">Name is missing.</p>
     </div>
 
-    <div class="form-group" ng-class="{ 'has-error' : registerForm.mail.$invalid && !registerForm.mail.$pristine }">
+    <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }">
         <label>Email:</label>
-        <input type="email" name="mail" class="form-control input-sm" ng-model="user.mail" required>
-        <p ng-show="registerForm.mail.$invalid && !registerForm.mail.$pristine" class="help-block">Invalid and/or missing email.</p>
+        <input type="email" name="email" class="form-control input-sm" ng-model="user.email" required>
+        <p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" class="help-block">Invalid and/or missing email.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.gender.$invalid && !registerForm.gender.$pristine }">
         <label>Gender:</label>
         <p>
             <!--TODO: solve the issue with the non-checked default radio button-->
-            <input type="radio" checked="true" name="gender" value="male" ng-model="user.gender.male"> Male
-            <input type="radio" name="gender" value="female" ng-model="user.gender.female"> Female
-            <input type="radio" name="gender" value="other" ng-model="user.gender.other"> Other
+            <input type="radio" checked="true" name="gender" value="male" ng-model="user.gender"> Male
+            <input type="radio" name="gender" value="female" ng-model="user.gender"> Female
+            <input type="radio" name="gender" value="other" ng-model="user.gender"> Other
         </p>
     </div>
 
