@@ -73,4 +73,8 @@ td:nth-child(1) {
     height: 150px !important;
 }
 
+.profile-picture-header {
+    display: block;
+    width: 50px;
+}
 

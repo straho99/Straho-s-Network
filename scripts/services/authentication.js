@@ -77,5 +77,13 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
         return localStorage['profileImageData'];
     };
 
+    service.setCoverImageData = function (coverImageData) {
+        localStorage['coverImageData'] = coverImageData;
+    };
+
+    service.getCoverImageData = function () {
+        return localStorage['coverImageData'];
+    };
+
     return service;
 });

@@ -65,6 +65,7 @@ socialNetwork.controller('EditProfileController',
                     function successHandler(data) {
                         authentication.setName(data.name);
                         authentication.setProfileImageData(data.profileImageData);
+                        authentication.setCoverImageData(data.coverImageData);
                         notify.info("Profile change successful.");
                         $location.path('/users/' + authentication.getUserName());
                     },
