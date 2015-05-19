@@ -3,11 +3,9 @@
         <div class="col-md-5">
             <fieldset>
                 <label>Profile photo:</label><br/>
-                <a href="#" class="thumbnail">
-                    <img ng-src="{{data.profileImageData}}" alt="Select profile photo.">
-                </a>
-
-                <p class="label label-info">Allowed format: .jpg, Limit: 1024kb</p><br/><br/>
+                    <img class="img-thumbnail profile-picture-preview" id="profileImagePreview" ng-src="{{data.profileImageData}}" alt="Select profile photo."><br/>
+                <p class="label label-info">Allowed format: .jpg, Limit: 128kb</p><br/><br/>
+                <input type="file" id="profileImageSelector" ng-show="false"/>
                 <button class="btn btn-default" ng-click="getProfileImage()">Upload</button>
             </fieldset>
         </div>
@@ -44,10 +42,8 @@
                 </div>
 
                 <label>Cover photo:</label><br/>
-                <a href="#" class="thumbnail">
-                    <img ng-src="{{coverImageData}}" alt="Select cover photo.">
-                </a>
-
+                    <img class="img-thumbnail cover-picture-preview" id="coverImagePreview" ng-src="{{data.coverImageData}}" alt="Select cover photo."><br/>
+                    <input type="file" id="coverImageSelector" ng-show="false"/>
                 <p class="label label-info">Limit: 1024kb</p><br/><br/>
                 <button class="btn btn-default" ng-click="getCoverImage()">Upload</button>
             </fieldset>

@@ -4,6 +4,12 @@ socialNetwork.controller('EditProfileController',
             .then(
             function successHandler(data) {
                 $scope.data = data;
+                if (!data.profileImageData) {
+                    document.getElementById('profileImagePreview').src = "img/noavatar.jpg";
+                }
+                if (!data.coverImageData) {
+                    document.getElementById('coverImagePreview').src = "img/nocover.png";
+                }
             },
             function errorHandler(error) {
                 console.log(error);
@@ -11,11 +17,41 @@ socialNetwork.controller('EditProfileController',
         );
 
         $scope.getProfileImage = function () {
-            //TODO: implement.
+            $('#profileImageSelector').click()
+                .on('change', function () {
+                    var file = this.files[0];
+                    if (file.type.match(/image\/.*/)) {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            $('#profileImagePreview')
+                                .text(file.name)
+                                .attr('src', reader.result);
+                            $scope.data.profileImageData = reader.result;
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        notify.error("Invalid file format.");
+                    }
+                });
         };
 
         $scope.getCoverImage = function () {
-            //TODO: implement.
+            $('#coverImageSelector').click()
+                .on('change', function () {
+                    var file = this.files[0];
+                    if (file.type.match(/image\/.*/)) {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            $('#coverImagePreview')
+                                .text(file.name)
+                                .attr('src', reader.result);
+                            $scope.data.coverImageData = reader.result;
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        notify.error("Invalid file format.");
+                    }
+                });
         };
 
         $scope.cancelSave = function () {
