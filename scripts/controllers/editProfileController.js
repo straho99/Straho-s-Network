@@ -1,16 +1,9 @@
 socialNetwork.controller('EditProfileController',
     function EditProfileController($scope, $location, authentication, notify) {
-        authentication.getUserFullData(authentication.getUserName())
+        authentication.getDataAboutMe()
             .then(
             function successHandler(data) {
-                $scope.profileImageData = data.profileImageData;
-                $scope.name = data.name;
-                $scope.email = data.email;
-                $scope.coverImageData = data.coverImageData;
-                $scope.gender.male = data.gender === 1 ? true : false;
-                $scope.gender.female = data.gender === 2 ? true : false;
-                $scope.gender.other = data.gender === 3 ? true : false;
-
+                $scope.data = data;
             },
             function errorHandler(error) {
                 console.log(error);
@@ -30,8 +23,19 @@ socialNetwork.controller('EditProfileController',
         };
 
         $scope.editProfile = function (profileData, editProfileForm) {
-            //TODO: implement.
-
-            //$location.path('/users/' + authentication.getUserName());
+            if (editProfileForm.$valid) {
+                authentication.editUserProfile(profileData)
+                    .then(
+                    function successHandler(data) {
+                        authentication.setName(data.name);
+                        authentication.setProfileImageData(data.profileImageData);
+                        notify.info("Profile change successful.");
+                        $location.path('/users/' + authentication.getUserName());
+                    },
+                    function errorHandler(error) {
+                        notify.error("Profile change failed.");
+                    }
+                )
+            }
         };
     });

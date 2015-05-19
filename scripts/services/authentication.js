@@ -26,6 +26,10 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
         return requester('GET', serviceUrl + '/' + username + '/preview', this.getHeaders());
     };
 
+    service.getDataAboutMe = function () {
+        return requester('GET', baseServiceUrl + '/me', this.getHeaders());
+    };
+
     service.editUserProfile = function (profileData) {
         return requester('PUT', baseServiceUrl + 'me', this.getHeaders(), profileData);
     };
