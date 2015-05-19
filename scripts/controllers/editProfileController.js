@@ -1,6 +1,6 @@
 socialNetwork.controller('EditProfileController',
-    function EditProfileController($scope, $location, authentication, notify) {
-        authentication.getDataAboutMe()
+    function EditProfileController($scope, $location, authentication, profileData, notify) {
+        profileData.getDataAboutMe()
             .then(
             function successHandler(data) {
                 $scope.data = data;
@@ -58,9 +58,9 @@ socialNetwork.controller('EditProfileController',
             $location.path('/users/' + authentication.getUserName());
         };
 
-        $scope.editProfile = function (profileData, editProfileForm) {
+        $scope.editProfile = function (profile, editProfileForm) {
             if (editProfileForm.$valid) {
-                authentication.editUserProfile(profileData)
+                authentication.editUserProfile(profile)
                     .then(
                     function successHandler(data) {
                         authentication.setName(data.name);

@@ -28,12 +28,5 @@ socialNetwork.factory('usersData', function usersData($http, requester, authenti
         return requester('GET', serviceUrl + '/' + username + '/friends/preview', authentication.getHeaders());
     };
 
-    return {
-        getUserPreviewData: getUserPreviewData,
-        getUserFullData: getUserFullData,
-        searchUsersByName: searchUsersByName,
-        getFriendWallByPages: getFriendWallByPages,
-        getFriendsDetailedFriendsList: getFriendsDetailedFriendsList,
-        getFriendsFriendsPreview: getFriendsFriendsPreview
-    }
+    return service;
 });

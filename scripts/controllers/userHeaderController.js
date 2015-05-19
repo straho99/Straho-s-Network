@@ -1,8 +1,8 @@
 socialNetwork.controller('UserHeaderController',
-    function UserHeaderController($scope, $location, authentication, notify) {
+    function UserHeaderController($scope, $location, authentication, usersData, notify) {
         $scope.username = authentication.getUserName();
 
-        authentication.getUserPreviewData($scope.username)
+        usersData.getUserPreviewData($scope.username)
             .then(
             function successHandler(data) {
                 $scope.name = data.name;

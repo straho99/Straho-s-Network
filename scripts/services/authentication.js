@@ -18,24 +18,8 @@ socialNetwork.factory('authentication', function authentication($http, baseServi
         return requester('POST', serviceUrl + '/logout', this.getHeaders());
     };
 
-    service.getUserFullData = function (username) {
-        return requester('GET', serviceUrl + '/' + username, this.getHeaders());
-    };
-
-    service.getUserPreviewData = function (username) {
-        return requester('GET', serviceUrl + '/' + username + '/preview', this.getHeaders());
-    };
-
-    service.getDataAboutMe = function () {
-        return requester('GET', baseServiceUrl + '/me', this.getHeaders());
-    };
-
-    service.editUserProfile = function (profileData) {
-        return requester('PUT', baseServiceUrl + 'me', this.getHeaders(), profileData);
-    };
-
-    service.changePassword = function (passwordData) {
-        return requester('PUT', baseServiceUrl + 'me/changepassword', this.getHeaders(), passwordData);
+    service.editUserProfile = function (profile) {
+        return requester('PUT', baseServiceUrl + 'me', this.getHeaders(), profile);
     };
 
     service.setCredentials = function (serverData) {

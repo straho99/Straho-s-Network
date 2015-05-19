@@ -43,14 +43,5 @@ socialNetwork.factory('commentsData', function commentsData($http, requester, au
         return requester('DELETE', serviceUrl + '/' + postId + '/comments' + '/' + commentId + '/likes', authentication.getHeaders());
     };
 
-    return {
-        getPostComments: getPostComments,
-        addCommentToPost: addCommentToPost,
-        editPostComment: editPostComment,
-        deletePostComment: deletePostComment,
-        getCommentDetailedLikes: getCommentDetailedLikes,
-        getCommentPreviewLikes: getCommentPreviewLikes,
-        likeComment: likeComment,
-        unlikeComment: unlikeComment
-    }
+    return service;
 });
