@@ -1,6 +1,7 @@
 socialNetwork.controller('HomeController',
     function HomeController($scope, authentication, postsData, profileData, notify) {
-        $scope.name = authentication.getUserName();
+        $scope.name = authentication.getName();
+        $scope.username = authentication.getUserName();
 
         profileData.getNewsFeedPages()
             .then(

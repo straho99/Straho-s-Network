@@ -55,7 +55,7 @@ socialNetwork.controller('EditProfileController',
         };
 
         $scope.cancelSave = function () {
-            $location.path('/users/' + authentication.getUserName());
+            $location.path('/users/me');
         };
 
         $scope.editProfile = function (profile, editProfileForm) {
@@ -67,7 +67,7 @@ socialNetwork.controller('EditProfileController',
                         authentication.setProfileImageData(data.profileImageData);
                         authentication.setCoverImageData(data.coverImageData);
                         notify.info("Profile change successful.");
-                        $location.path('/users/' + authentication.getUserName());
+                        $location.path('/users/me');
                     },
                     function errorHandler(error) {
                         notify.error("Profile change failed.");

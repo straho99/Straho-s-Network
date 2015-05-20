@@ -7,7 +7,7 @@ socialNetwork.controller('LoginController',
                     function successHandler(data) {
                         authentication.setCredentials(data);
                         notify.info("Login successful.");
-                        $location.path('/users/' + authentication.getUserName());
+                        $location.path('/users/me');
                     },
                     function errorHandler(error) {
                         notify.error("Login failed.");

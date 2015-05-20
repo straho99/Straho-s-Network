@@ -21,9 +21,14 @@ socialNetwork.config(['$routeProvider',
                 controller: 'RegisterController'
             });
         $routeProvider.
-            when('/users/:username', {
+            when('/users/me', {
                 templateUrl: 'partials/home.html',
                 controller: 'HomeController'
+            });
+        $routeProvider.
+            when('/users/:username', {
+                templateUrl: 'partials/user-wall.html',
+                controller: 'UserWallController'
             });
         $routeProvider.
             when('/users/:username/friends', {

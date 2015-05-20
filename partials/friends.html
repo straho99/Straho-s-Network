@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <user-header></user-header>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{name}} - Friends ({{friendsCount}} total)</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-2" ng-repeat="friend in friends">
+            <all-friends></all-friends>
+        </div>
+    </div>
+</div>

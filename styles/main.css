@@ -12,6 +12,11 @@ h1 {
     text-align: center;
 }
 
+p {
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+
 table {
     margin-top: 15px !important;
 }
@@ -30,7 +35,7 @@ table {
 }
 
 .menu-icon {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .thumbnail {
@@ -103,7 +108,7 @@ table {
     background-color: lightgray;
 }
 
-.friends-table tr:nth-of-type(even){
+.friends-table tr{
     background-color: #f3f3f3;
 }
 
