@@ -45,15 +45,23 @@ table {
     width: 35px;
 }
 
-. post-container {
+.post-container {
     display: block;
 }
 
-td:nth-child(1) {
+.posts-table tr {
+    background-color: #f3f3f3;
+}
+
+.posts-table th, .posts-table tr:nth-child(1), .posts-table tr:nth-child(2), .posts-table tr:nth-child(3){
+    background-color: lightgray;
+}
+
+.posts-table td:nth-child(1) {
     width: 10%;
 }
 
-th:nth-child(1) {
+.posts-table th:nth-child(1) {
     width: 10%;
 }
 
@@ -77,6 +85,11 @@ th:nth-child(1) {
     height: 150px !important;
 }
 
+.friend-preview-img {
+    display: block;
+    width: 75px !important;
+}
+
 .profile-picture-header {
     display: block;
     width: 50px;
@@ -84,5 +97,17 @@ th:nth-child(1) {
 
 .comment-button {
     margin-top: 3px !important;
+}
+
+.friends-table th{
+    background-color: lightgray;
+}
+
+.friends-table tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.friends-table td:nth-child(1){
+    width: 20%;
 }
 

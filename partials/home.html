@@ -11,7 +11,7 @@
 
     <div class="row">
         <!-- Posts column-->
-        <div class="col-md-7">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12">
                     <post-form></post-form>
@@ -23,9 +23,11 @@
             <post ng-repeat="post in posts"></post>
         </div>
 
-        <!-- Friends column-->
-        <div class="col-md-5">
+        <div class="col-md-1"></div>
 
+        <!-- Friends column-->
+        <div class="col-md-4">
+            <friends-sidebar></friends-sidebar>
         </div>
     </div>
 </div>

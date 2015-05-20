@@ -15,6 +15,17 @@ socialNetwork.controller('HomeController',
             }
         );
 
+        profileData.getOwnFriends()
+            .then(
+            function successHandler(data) {
+                $scope.friends = data;
+                $scope.friendsCount = data.length;
+            },
+            function errorHandler(error) {
+                console.log(error);
+            }
+        );
+
         $scope.addNewPost = function () {
             postsData.addPost($scope.postContent, authentication.getUserName())
                 .then(
