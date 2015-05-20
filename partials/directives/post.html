@@ -37,7 +37,7 @@
         </td>
     </tr>
 
-    <tr class="comment" ng-repeat="comment in post.comments"></tr>
+    <tr class="comment" ng-repeat="comment in post.comments | orderBy: 'date'" ng-cloak=""></tr>
 
     </tbody>
 </table>

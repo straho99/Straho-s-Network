@@ -9,8 +9,8 @@
         <p>{{comment.commentContent}}</p>
         <p>
             <span><a href="">{{comment.likesCount}} people liked this</a></span> -
-            <span><a href="" ng-hide="isLiked">Like</a></span>
-            <span><a href="" ng-show="isLiked">Unlike</a></span>
+            <span><a href="" ng-hide="comment.liked" ng-click="likeComment(comment)">Like</a></span>
+            <span><a href="" ng-show="comment.liked" ng-click="unlikeComment(comment)">Unlike</a></span>
             <span class="pull-right"><a href="" ng-click="showReplyForm()">Reply</a></span>
         </p>
         <p>

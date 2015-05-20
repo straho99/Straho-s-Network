@@ -11,8 +11,6 @@ socialNetwork.controller('PostController',
             }
         );
 
-        //$scope.isLiked = $scope.post.liked; //TODO: get data from the server here!
-
         $scope.showCommentForm = function () {
             $scope.commentFormVisible = !$scope.commentFormVisible;
         };
@@ -64,7 +62,7 @@ socialNetwork.controller('PostController',
                     );
                 },
                 function errorHandler(error) {
-
+                    console.log(error);
                 }
             );
         };
