@@ -6,7 +6,13 @@ socialNetwork.controller('UserHeaderController',
             .then(
             function successHandler(data) {
                 $scope.name = data.name;
-                $scope.profileImageData = data.profileImageData;
+
+                if (data.profileImageData) {
+                    $scope.profileImageData = data.profileImageData;
+                } else {
+                    document.getElementById('me-preview').src = "img/noavatar.jpg";
+                }
+
                 authentication.setName(data.name);
                 authentication.setProfileImageData(data.profileImageData);
             },
