@@ -53,6 +53,10 @@ td:nth-child(1) {
     width: 10%;
 }
 
+th:nth-child(1) {
+    width: 10%;
+}
+
 .user-preview-container {
     width: 25%;
     height: 10em;
@@ -76,5 +80,9 @@ td:nth-child(1) {
 .profile-picture-header {
     display: block;
     width: 50px;
+}
+
+.comment-button {
+    margin-top: 3px !important;
 }
 
