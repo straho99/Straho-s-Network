@@ -1,5 +1,5 @@
 socialNetwork.controller('PostController',
-    function PostController($scope, authentication, commentsData, notify) {
+    function PostController($scope, authentication, postsData, commentsData, notify) {
 
         commentsData.getPostComments($scope.post.id)
             .then(
@@ -11,7 +11,7 @@ socialNetwork.controller('PostController',
             }
         );
 
-        $scope.isLiked = false; //TODO: get data from the server here!
+        //$scope.isLiked = $scope.post.liked; //TODO: get data from the server here!
 
         $scope.showCommentForm = function () {
             $scope.commentFormVisible = !$scope.commentFormVisible;
@@ -29,5 +29,43 @@ socialNetwork.controller('PostController',
                 }
             );
             $scope.commentFormVisible = false;
+        };
+
+        $scope.likePost = function () {
+            postsData.likePostById($scope.post.id)
+                .then(
+                function successHandler(data) {
+                    notify.info('Post liked.');
+                    $scope.post.liked = true;
+                    postsData.getPostPreviewLikes($scope.post.id)
+                        .then(
+                        function successHandler(likesData) {
+                            $scope.post.likesCount = likesData.totalLikeCount;
+                        }
+                    );
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+
+        $scope.unlikePost = function () {
+            postsData.unlikePostById($scope.post.id)
+                .then(
+                function successHandler(data) {
+                    notify.info('Post unliked');
+                    $scope.post.liked = false;
+                    postsData.getPostPreviewLikes($scope.post.id)
+                        .then(
+                        function successHandler(likesData) {
+                            $scope.post.likesCount = likesData.totalLikeCount;
+                        }
+                    );
+                },
+                function errorHandler(error) {
+
+                }
+            );
         };
     });

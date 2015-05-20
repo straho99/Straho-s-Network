@@ -17,8 +17,8 @@
     <tr>
         <td colspan="2">
             <a href=""> {{post.likesCount}} people liked this</a> -
-            <a href="" ng-hide="isLiked">Like</a>
-            <a href="" ng-show="isLiked">Unlike</a>
+            <a href="" ng-hide="post.liked" ng-click="likePost()">Like</a>
+            <a href="" ng-show="post.liked" ng-click="unlikePost()">Unlike</a>
             <a href="" ng-click="showCommentForm()" class="pull-right">Comment</a>
 
         </td>
