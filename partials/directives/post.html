@@ -1,0 +1,43 @@
+<table class="table table-striped" post-id="{{post.id}}">
+    <thead>
+    <tr>
+        <th>
+            <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
+        </th>
+        <th>
+            <a href="#/users/{{post.author.username}}">{{post.author.name}}</a><br/>
+            <span>{{post.date | date:"dd/MM/yyyy ' at ' hh-mm-ss Z" : "+3000"}}</span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td colspan="2">{{post.postContent}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a href=""> {{post.likesCount}} people liked this</a> -
+            <a href="" ng-hide="isLiked">Like</a>
+            <a href="" ng-show="isLiked">Unlike</a>
+            <a href="" ng-click="showCommentForm()" class="pull-right">Comment</a>
+
+        </td>
+    </tr>
+
+    <tr ng-show="commentFormVisible">
+        <td></td>
+        <td>
+            <form class="form-horizontal ">
+                <div class="form-group-sm">
+                    <label class="sr-only" for="exampleComment">Comment here</label>
+                    <input type="text" class="form-control input-sm" id="exampleComment" ng-model="commentContent">
+                </div>
+                <button type="submit" class="btn btn-default input-sm pull-right comment-button" ng-click="addComment()">Comment</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr class="comment" ng-repeat="comment in post.comments"></tr>
+
+    </tbody>
+</table>

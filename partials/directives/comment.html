@@ -1,81 +1,26 @@
-<!-- Comments rows - one row for each comment-->
 <tr>
     <td>
-        <img class="img-thumbnail" src="img/straho.jpg" alt=""/>
+        <img class="img-thumbnail" ng-src="{{comment.author.profileImageData}}" alt=""/>
     </td>
     <td>
-        <a href="#/users/:username">Strahil Ruychev</a>
-        <p>Here is the content of the comment: Welcome Kalin!</p>
-        <p>
-            <span> <a href="">Time of comment</a></span>
-            <span><a href="">Like/Unlike</a></span>
-            <span><a href="">Total likes</a></span>
-            <span><a href="">Reply</a></span>
-        </p>
-        <p>
-        <form class="form-inline">
-            <div class="form-group">
-                <label class="sr-only" for="exampleComment">Comment here</label>
-                <input type="text" class="form-control input-sm" id="exampleComment">
-            </div>
-            <button type="submit" class="btn btn-default input-sm">Comment</button>
-        </form>
-        </p>
-    </td>
-</tr>
+        <a href="#/users/{{comment.author.username}}">{{comment.author.name}}</a>
+        <p>{{comment.date | date:"dd/MM/yyyy ' at ' hh-mm-ss Z" : "+3000"}}</span></p>
 
-<tr>
-    <td>
-        <img class="img-thumbnail" src="img/straho.jpg" alt=""/>
-    </td>
-    <td>
-        <a href="#/users/:username">Strahil Ruychev</a>
-        <p>Here is the content of the comment: Welcome Kalin!</p>
+        <p>{{comment.commentContent}}</p>
         <p>
-            <span> <a href="">Time of comment</a></span>
-            <span><a href="">Like/Unlike</a></span>
-            <span><a href="">Total likes</a></span>
-            <span><a href="">Reply</a></span>
+            <span><a href="">{{comment.likesCount}} people liked this</a></span> -
+            <span><a href="" ng-hide="isLiked">Like</a></span>
+            <span><a href="" ng-show="isLiked">Unlike</a></span>
+            <span class="pull-right"><a href="" ng-click="showReplyForm()">Reply</a></span>
         </p>
         <p>
-        <form class="form-inline">
-            <div class="form-group">
+        <form class="form-horizontal" ng-show="replyFormVisible">
+            <div class="form-group-sm">
                 <label class="sr-only" for="exampleComment">Comment here</label>
-                <input type="text" class="form-control input-sm" id="exampleComment">
+                <input type="text" class="form-control input-sm" id="exampleComment" ng-model="replyContent">
             </div>
-            <button type="submit" class="btn btn-default input-sm">Comment</button>
+            <button type="submit" class="btn btn-default input-sm pull-right comment-button" ng-click="addComment()">Comment</button>
         </form>
         </p>
     </td>
 </tr>
-
-<tr>
-    <td>
-        <img class="img-thumbnail" src="img/straho.jpg" alt=""/>
-    </td>
-    <td>
-        <a href="#/users/:username">Strahil Ruychev</a>
-        <p>Here is the content of the comment: Welcome Kalin!</p>
-        <p>
-            <span> <a href="">Time of comment</a></span>
-            <span><a href="">Like/Unlike</a></span>
-            <span><a href="">Total likes</a></span>
-            <span><a href="">Reply</a></span>
-        </p>
-        <p>
-        <form class="form-inline">
-            <div class="form-group">
-                <label class="sr-only" for="exampleComment">Comment here</label>
-                <input type="text" class="form-control input-sm" id="exampleComment">
-            </div>
-            <button type="submit" class="btn btn-default input-sm">Comment</button>
-        </form>
-        </p>
-    </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <a href="">See all comments: 21</a>
-    </td>
-</tr>
-<!-- End of comments rows-->
