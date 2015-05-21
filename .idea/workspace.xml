@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346e10eb-dbd9-40d1-99ce-d48dd75c9d3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/directives/clickAnywhere.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/user-preview.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/comment.html" afterPath="$PROJECT_DIR$/partials/directives/comment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/commentController.js" afterPath="$PROJECT_DIR$/scripts/controllers/commentController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/filters/gender.js" afterPath="$PROJECT_DIR$/scripts/filters/gender.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/post.html" afterPath="$PROJECT_DIR$/partials/directives/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/postController.js" afterPath="$PROJECT_DIR$/scripts/controllers/postController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/user-header.html" afterPath="$PROJECT_DIR$/partials/directives/user-header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/userHeaderController.js" afterPath="$PROJECT_DIR$/scripts/controllers/userHeaderController.js" />
     </list>
     <ignored path="Straho's Network.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,28 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.833333">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comment.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/partials/directives/comment.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33070865">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commentController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/commentController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            <state vertical-scroll-proportion="-16.25">
+              <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -75,7 +51,37 @@
         <entry file="file://$PROJECT_DIR$/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/directives/user-header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.333334">
+              <caret line="38" column="62" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userHeaderController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/userHeaderController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.68133533">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -85,17 +91,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/controllers/postController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/directives/post.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="139" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="139" />
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -136,7 +132,6 @@
         <option value="$PROJECT_DIR$/scripts/services/usersData.js" />
         <option value="$PROJECT_DIR$/scripts/services/commentsData.js" />
         <option value="$PROJECT_DIR$/scripts/services/profileData.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/userHeaderController.js" />
         <option value="$PROJECT_DIR$/scripts/directives/postForm.js" />
         <option value="$PROJECT_DIR$/partials/directives/post-form.html" />
         <option value="$PROJECT_DIR$/scripts/directives/post.js" />
@@ -153,7 +148,6 @@
         <option value="$PROJECT_DIR$/scripts/controllers/editProfileController.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/userWallController.js" />
         <option value="$PROJECT_DIR$/partials/friends.html" />
-        <option value="$PROJECT_DIR$/partials/directives/user-header.html" />
         <option value="$PROJECT_DIR$/partials/welcome.html" />
         <option value="$PROJECT_DIR$/partials/login.html" />
         <option value="$PROJECT_DIR$/partials/register.html" />
@@ -161,14 +155,16 @@
         <option value="$PROJECT_DIR$/scripts/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/partials/user-preview.html" />
-        <option value="$PROJECT_DIR$/styles/main.css" />
         <option value="$PROJECT_DIR$/scripts/filters/gender.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/postController.js" />
         <option value="$PROJECT_DIR$/scripts/directives/clickAnywhere.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/partials/directives/post.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/commentController.js" />
         <option value="$PROJECT_DIR$/partials/directives/comment.html" />
+        <option value="$PROJECT_DIR$/partials/directives/post.html" />
+        <option value="$PROJECT_DIR$/styles/main.css" />
+        <option value="$PROJECT_DIR$/partials/directives/user-header.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/userHeaderController.js" />
       </list>
     </option>
   </component>
@@ -370,7 +366,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="po&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/post.html&#10;main&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;app&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/app.js&#10;ma&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;mai&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;frco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendsController.js&#10;user&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;proda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;ho&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/home.html&#10;inde&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;post&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/post-form.html&#10;pos&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/directives/postForm.js&#10;hom&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/home.html&#10;heade&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userHeaderController.js&#10;au&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;edi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/editProfileController.js&#10;edit&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;logcont&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/loginController.js&#10;change&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/changePasswordController.js&#10;chan&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;regi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;regis&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;req&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/requester.js&#10;login&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/login-form.html&#10;ind&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;regco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;reg&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/register-form.html&#10;fri&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendController.js" />
+    <property name="SearchEverywhereHistoryKey" value="hom&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;app&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/app.js&#10;psoco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;po&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/post.html&#10;main&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;ma&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;mai&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;frco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendsController.js&#10;user&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;proda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;ho&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/home.html&#10;inde&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;post&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/post-form.html&#10;pos&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/directives/postForm.js&#10;heade&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userHeaderController.js&#10;au&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;edi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/editProfileController.js&#10;edit&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;logcont&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/loginController.js&#10;change&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/changePasswordController.js&#10;chan&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;regi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;regis&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;req&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/requester.js&#10;login&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/login-form.html&#10;ind&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;regco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;reg&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/register-form.html&#10;fri&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendController.js" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
@@ -521,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/register-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3270142">
-          <caret line="19" column="95" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/change-password-form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -553,13 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14173229">
           <caret line="8" column="92" selection-start-line="8" selection-start-column="92" selection-end-line="8" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/userHeaderController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -689,14 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/user-header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4488189">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18897638">
@@ -745,22 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/userWallController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09104704">
@@ -793,14 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/filters/gender.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -825,30 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.833333">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="139" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="139" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/postController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/commentController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -857,10 +783,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/register-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26771653">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/comment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33070865">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.16535433">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30708662">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/postController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04552352">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/user-header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.333334">
+          <caret line="38" column="62" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/userHeaderController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68133533">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
           <folding />
         </state>
       </provider>

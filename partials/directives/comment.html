@@ -9,7 +9,7 @@
         <div class="user-preview-container" ng-show="isUserPreviewVisible">
             <img ng-src="{{comment.author.profileImageData}}" alt="{{comment.author.name}}"/><br/>
             <p><span>{{comment.author.name}}</span><br/>
-                <span><img src="{{comment.author.gender | gender}}"/></span></p>
+                <span><img ng-src="{{comment.author.gender | gender}}"/></span></p>
         </div>
         <!-- End User preview element-->
         <br/>

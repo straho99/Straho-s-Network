@@ -1,6 +1,7 @@
 socialNetwork.controller('UserHeaderController',
-    function UserHeaderController($scope, $location, authentication, usersData, notify) {
+    function UserHeaderController($scope, $location, authentication, usersData, profileData, notify) {
         $scope.username = authentication.getUserName();
+        $scope.areFriendRequestsVisible = false;
 
         usersData.getUserPreviewData($scope.username)
             .then(
@@ -21,6 +22,17 @@ socialNetwork.controller('UserHeaderController',
             }
         );
 
+        profileData.getFriendRequests()
+            .then(
+            function successHandler(data) {
+                $scope.requests = data;
+                $scope.requestsCount = data.length;
+            },
+            function errorHandler(error) {
+                console.log(error);
+            }
+        );
+
         $scope.logout = function () {
             authentication.logout()
                 .then(
@@ -34,5 +46,16 @@ socialNetwork.controller('UserHeaderController',
                     notify.error("Logout failed.");
                 }
             );
-        }
+        };
+
+        $scope.showFriendRequests = function (event) {
+            var leftPosition = event.screenX,
+                topPosition = event.clientY + 10,
+                container = document.getElementById('friendRequestsContainer');
+
+            container.style.top = topPosition + 'px';
+            container.style.left = leftPosition + 'px';
+
+            $scope.areFriendRequestsVisible = true;
+        };
     });
