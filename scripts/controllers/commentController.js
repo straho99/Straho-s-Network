@@ -1,5 +1,8 @@
 socialNetwork.controller('CommentController',
     function CommentController($scope, authentication, commentsData, notify) {
+
+        $scope.isUserPreviewVisible = false;
+
         $scope.showReplyForm = function () {
             $scope.replyFormVisible = !$scope.replyFormVisible;
         };
@@ -54,5 +57,9 @@ socialNetwork.controller('CommentController',
                     console.log(error);
                 }
             );
+        };
+
+        $scope.previewUser = function () {
+            $scope.isUserPreviewVisible = true;
         };
     });

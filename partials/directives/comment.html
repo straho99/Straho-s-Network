@@ -3,7 +3,17 @@
         <img class="img-thumbnail" ng-src="{{comment.author.profileImageData}}" alt=""/>
     </td>
     <td>
-        <a href="#/users/{{comment.author.username}}">{{comment.author.name}}</a>
+        <a href="#/users/{{comment.author.username}}" ng-mouseover="isUserPreviewVisible=true" click-anywhere="isUserPreviewVisible=false">{{comment.author.name}}</a>
+
+        <!-- User preview element-->
+        <div class="user-preview-container" ng-show="isUserPreviewVisible">
+            <img ng-src="{{comment.author.profileImageData}}" alt="{{comment.author.name}}"/><br/>
+            <p><span>{{comment.author.name}}</span><br/>
+                <span><img src="{{comment.author.gender | gender}}"/></span></p>
+        </div>
+        <!-- End User preview element-->
+        <br/>
+
         <p>{{comment.date | date:"dd/MM/yyyy ' at ' hh-mm-ss Z" : "+3000"}}</span></p>
 
         <p>{{comment.commentContent}}</p>

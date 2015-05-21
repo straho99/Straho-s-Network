@@ -5,13 +5,13 @@
             <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
-            <a href="#/users/{{post.author.username}}" ng-mouseover="previewUser()">{{post.author.name}}</a>
+            <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true" click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>
 
             <!-- User preview element-->
             <div class="user-preview-container" ng-show="isUserPreviewVisible">
                 <img ng-src="{{post.author.profileImageData}}" alt="{{post.author.name}}"/><br/>
                 <p><span>{{post.author.name}}</span><br/>
-                <span>{{post.author.gender | gender}}</span></p>
+                <span><img src="{{post.author.gender | gender}}"/></span></p>
             </div>
             <!-- End User preview element-->
             <br/>
