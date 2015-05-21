@@ -58,4 +58,28 @@ socialNetwork.controller('UserHeaderController',
 
             $scope.areFriendRequestsVisible = true;
         };
+
+        $scope.approveFriendRequest = function (request) {
+            profileData.approveFriendRequest(request.id)
+                .then(
+                function successHandler(data) {
+                    notify.info("Friend request accepted.");
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+
+        $scope.rejectFriendRequest = function (request) {
+            profileData.rejectFriendRequest(request.id)
+                .then(
+                function successHandler(data) {
+                    notify.error("Friend request rejected.");
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
     });

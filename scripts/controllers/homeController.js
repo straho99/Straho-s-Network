@@ -4,7 +4,7 @@ socialNetwork.controller('HomeController',
         $scope.username = authentication.getUserName();
         $scope.isUserPreviewVisible = false;
 
-        profileData.getNewsFeedPages()
+        profileData.getNewsFeedPages("")
             .then(
             function successHandler(data) {
                 $scope.posts = data;

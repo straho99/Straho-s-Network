@@ -25,7 +25,7 @@ socialNetwork.factory('profileData', function profileData($http, requester, auth
     };
 
     service.rejectFriendRequest = function (requestId) {
-        return requester('PUT', serviceUrl + '/requests/' + requestId + '?status=delete', authentication.getHeaders());
+        return requester('PUT', serviceUrl + '/requests/' + requestId + '?status=rejected', authentication.getHeaders());
     };
 
     service.getNewsFeedPages = function (StartPostId) {

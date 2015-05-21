@@ -18,7 +18,7 @@
                         <li><img id="me-preview" class="img-thumbnail profile-picture-header" ng-src="{{profileImageData}}"></li>
                         <li><a href="#"><span>{{name}}</span></a></li>
                         <li><a href="#users/me"><span class="glyphicon glyphicon-comment menu-icon"></span></a></li>
-                        <li><a href="#" ng-click="showFriendRequests($event)" click-anywhere="areFriendRequestsVisible=false"><span class="glyphicon glyphicon-user menu-icon"></span><span class="badge">{{requestsCount}}</span></a></li>
+                        <li><a href="#" ng-click="showFriendRequests($event)" click-anywhere="areFriendRequestsVisible=false"><span class="glyphicon glyphicon-user menu-icon"></span><span ng-show="requestCount > 0" class="badge">{{requestsCount}}</span></a></li>
 
                         <!-- Friend requests element-->
                         <div class="friend-requests-container" id="friendRequestsContainer" ng-show="areFriendRequestsVisible" click-anywhere="areFriendRequestsVisible=false">
@@ -29,8 +29,8 @@
                                     </td>
                                     <td>
                                         <h6>{{request.user.name}}</h6>
-                                        <button class="btn btn-success btn-sm" ng-click="">Accept</button>
-                                        <button class="btn btn-danger btn-sm" ng-click="">Reject</button>
+                                        <button class="btn btn-success btn-sm" ng-click="approveFriendRequest(request)">Accept</button>
+                                        <button class="btn btn-danger btn-sm" ng-click="rejectFriendRequest(request)">Reject</button>
                                     </td>
                                 </tr>
                                 <tr>{{requestsCount}} request(s) total</tr>
