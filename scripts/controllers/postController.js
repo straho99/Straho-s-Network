@@ -1,6 +1,12 @@
 socialNetwork.controller('PostController',
     function PostController($scope, authentication, postsData, commentsData, notify) {
 
+        $scope.isUserPreviewVisible = false;
+
+        //$scope.on('click', function () {
+        //    $scope.isUserPreviewVisible = false;
+        //});
+
         commentsData.getPostComments($scope.post.id)
             .then(
             function successHandler(data) {
@@ -66,4 +72,23 @@ socialNetwork.controller('PostController',
                 }
             );
         };
+
+        $scope.previewUser = function () {
+            $scope.isUserPreviewVisible = true;
+        };
+
+        //$scope.previewUser = function($event, user) {
+        //
+        //    console.log(event, user);
+        //
+        //    var dialogScope = $scope.$new(true);
+        //    dialogScope.user = user;
+        //
+        //    var userPreviewModal = $modal.open({
+        //        templateUrl: 'partials/user-preview.html',
+        //        scope: dialogScope,
+        //        size: 'sm',
+        //        class: 'user-preview-container'
+        //    });
+        //};
     });

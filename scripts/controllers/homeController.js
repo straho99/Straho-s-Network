@@ -2,6 +2,7 @@ socialNetwork.controller('HomeController',
     function HomeController($scope, authentication, postsData, profileData, notify) {
         $scope.name = authentication.getName();
         $scope.username = authentication.getUserName();
+        $scope.isUserPreviewVisible = false;
 
         profileData.getNewsFeedPages()
             .then(
@@ -39,5 +40,5 @@ socialNetwork.controller('HomeController',
                     console.log(error);
                 }
             );
-        }
+        };
     });

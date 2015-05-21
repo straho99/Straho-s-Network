@@ -5,7 +5,17 @@
             <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
-            <a href="#/users/{{post.author.username}}">{{post.author.name}}</a><br/>
+            <a href="#/users/{{post.author.username}}" ng-mouseover="previewUser()">{{post.author.name}}</a>
+
+            <!-- User preview element-->
+            <div class="user-preview-container" ng-show="isUserPreviewVisible">
+                <img ng-src="{{post.author.profileImageData}}" alt="{{post.author.name}}"/><br/>
+                <p><span>{{post.author.name}}</span><br/>
+                <span>{{post.author.gender | gender}}</span></p>
+            </div>
+            <!-- End User preview element-->
+            <br/>
+
             <span>{{post.date | date:"dd/MM/yyyy ' at ' hh-mm-ss Z" : "+3000"}}</span>
         </th>
     </tr>
@@ -32,7 +42,9 @@
                     <label class="sr-only" for="exampleComment">Comment here</label>
                     <input type="text" class="form-control input-sm" id="exampleComment" ng-model="commentContent">
                 </div>
-                <button type="submit" class="btn btn-default input-sm pull-right comment-button" ng-click="addComment()">Comment</button>
+                <button type="submit" class="btn btn-default input-sm pull-right comment-button"
+                        ng-click="addComment()">Comment
+                </button>
             </form>
         </td>
     </tr>

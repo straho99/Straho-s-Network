@@ -1,16 +1,11 @@
-<!--User preview element-->
-<div class="container user-preview-container">
-    <div class="row">
-        <div class="col-md-1">
-            <img src="img/straho.jpg" class="img-rounded img-thumbnail"/>
-        </div>
-        <div class="col-md-10">
-            <p>
-                <span>User name here</span>
-                <span>User gender sign here</span><br/>
-                <button type="submit" class="btn btn-default input-sm">Invite</button>
-            </p>
-        </div>
-    </div>
-</div>
-<!--End of User preview element-->
+<table class="user-preview-container">
+    <tr>
+        <th>
+            <img class="img-thumbnail profile-picture-preview" ng-src="{{user.profileImageData}}" alt="{{user.name}}"/>
+        </th>
+        <th>
+            <p><span>{{user.name}}</span></p>
+            <p><span>{{user.gender | gender}}</span></p>
+        </th>
+    </tr>
+</table>

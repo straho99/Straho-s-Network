@@ -10,6 +10,7 @@ socialNetwork.controller('CommentController',
                 function successHandler(data) {
                     notify.info("Commented successfully.");
                     $scope.commentContent = '';
+                    $scope.replyFormVisible = false;
                 },
                 function errorHandler(error) {
                     notify.error("Comment failed.");

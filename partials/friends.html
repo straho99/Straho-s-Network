@@ -10,7 +10,18 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 col-md-2" ng-repeat="friend in friends">
+        <div class="col-md-2">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchFriends" placeholder="Search..." ng-model="keyword">
+                </div>
+            </form>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-2" ng-repeat="friend in friends | filter: keyword">
             <all-friends></all-friends>
         </div>
     </div>
