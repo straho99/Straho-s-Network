@@ -41,4 +41,12 @@ socialNetwork.controller('HomeController',
                 }
             );
         };
+
+        $scope.$on('deletePost', function(event, data) {
+            var index = $scope.posts.indexOf(data);
+
+            if (index > -1) {
+                $scope.posts.splice(index, 1);
+            }
+        });
     });

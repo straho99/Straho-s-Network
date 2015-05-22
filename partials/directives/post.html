@@ -5,6 +5,17 @@
             <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
+
+            <div class="btn-group btn-group-sm pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Edit <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="" ng-click="open()">Edit post</a></li>
+                    <li><a href="" ng-click="deletePost()">Delete post</a></li>
+                </ul>
+            </div>
+
             <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true"
                click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>
 

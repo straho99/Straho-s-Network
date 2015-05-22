@@ -1,5 +1,5 @@
 socialNetwork.controller('PostController',
-    function PostController($scope, $document, authentication, postsData, commentsData, usersData, profileData, notify) {
+    function PostController($scope, $document, $modal, authentication, postsData, commentsData, usersData, profileData, notify) {
 
         $scope.isUserPreviewVisible = false;
         $scope.showComments = false;
@@ -27,7 +27,7 @@ socialNetwork.controller('PostController',
         $scope.showCommentForm = function () {
             $scope.commentFormVisible = !$scope.commentFormVisible;
         };
-        
+
         $scope.addComment = function () {
             commentsData.addCommentToPost($scope.post.id, $scope.commentContent)
                 .then(
@@ -88,7 +88,7 @@ socialNetwork.controller('PostController',
             profileData.sendFriendRequest($scope.post.author.username)
                 .then(
                 function successHandler(data) {
-                    notify.info("Invitation sent.")
+                    notify.info("Invitation sent.");
                     console.log(data);
                 },
                 function errorHandler(error) {
@@ -96,8 +96,53 @@ socialNetwork.controller('PostController',
                 }
             );
         };
-        
+
         $scope.toggleComments = function () {
             $scope.showComments = !$scope.showComments;
         };
+
+        $scope.deletePost = function () {
+
+            postsData.deletePostById($scope.post.id)
+                .then(
+                function successHandler(data) {
+                    notify.info("Post deleted.");
+                    $scope.$emit('deletePost', $scope.post);
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+
+
+        $scope.open = function (modalName) {
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/directives/edit-posting.html',
+                controller: 'EditPostingController',
+                resolve: {
+                    'posting': function () {
+                        return $scope.post;
+                    }
+                }
+            });
+
+            modalInstance.result.then(
+                function edit(response) {
+                    postsData.editPostById(response, $scope.post.id)
+                        .then(
+                        function successHandler(data) {
+                            $scope.post.postContent = response;
+                            notify.info("Post edited.");
+                        },
+                        function (error) {
+
+                        }
+                    );
+                },
+                function cancelEdit() {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+        };
+
     });
