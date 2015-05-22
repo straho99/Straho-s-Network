@@ -18,12 +18,19 @@ socialNetwork.controller('CommentController',
         );
 
         $scope.addComment = function () {
+
+            if (!verifyCommentOperation()) {
+                notify.error("You can only comment on posts of your friends their walls.");
+                return;
+            }
+
             commentsData.addCommentToPost($scope.post.id, $scope.replyContent)
                 .then(
                 function successHandler(data) {
                     notify.info("Commented successfully.");
                     $scope.commentContent = '';
                     $scope.replyFormVisible = false;
+                    $scope.post.comments.push(data);
                 },
                 function errorHandler(error) {
                     notify.error("Comment failed.");
@@ -85,4 +92,16 @@ socialNetwork.controller('CommentController',
                 }
             );
         };
+
+        function verifyCommentOperation() {
+            if ($scope.post.author.isFriend) {
+                return true;
+            }
+
+            if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            return false;
+        }
     });

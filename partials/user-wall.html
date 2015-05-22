@@ -8,10 +8,11 @@
             <img ng-src="{{user.profileImageData}}" class="img-rounded img-thumbnail friend-preview-img"/>
         </div>
         <div class="col-md-10">
-            <div class="row"><h1 class="pull-left">{{user.name}}</h1></div>
+            <div class="row"><h1 class="pull-left">{{user.name}}'s Wall</h1></div>
             <div class="row"><button class="btn btn-success btn-sm pull-left" ng-show="user.isFriend">Friend</button></div>
-            <div class="row"><button class="btn btn-danger btn-sm pull-left" ng-show="!user.isFriend && !user.hasPendingRequest" ng-click="inviteFriend()">Invite</button></div>
-            <div class="row"><button class="btn btn-warning btn-sm pull-left" ng-show="user.hasPendingRequest">Pending</button></div>
+            <div class="row"><button class="btn btn-danger btn-sm pull-left" ng-show="!user.isFriend && !user.hasPendingRequest && !isMe" ng-click="inviteFriend()">Invite</button></div>
+            <div class="row"><button class="btn btn-warning btn-sm pull-left" ng-show="user.hasPendingRequest && !isMe">Pending</button></div>
+            <div class="row"><button class="btn btn-info btn-sm pull-left" ng-show="isMe">Me</button></div>
         </div>
 
     </div>
@@ -22,16 +23,17 @@
             <p></p>
 
             <h3 ng-show="isNewsFeedEmpty">The news feed is empty.</h3>
-            <user-post ng-repeat="post in posts"></user-post>
+            <user-post ng-repeat="post in posts | orderBy: '-date'"></user-post>
         </div>
 
         <div class="col-md-1"></div>
 
         <div class="col-md-4">
             <div class="row">
-                <div post-to-user test2="{{friendUserName}}"></div>
+                <div ng-if="user.isFriend" post-to-user test2="{{friendUserName}}" friend="{{friend}}"></div>
             </div>
-            <div class="row" user-friends-sidebar test="{{friendUserName}}"></div>
+            <div ng-if="user.isFriend || isMe" class="row" user-friends-sidebar test="{{friendUserName}}"></div>
+            <!--<div ng-if="user.isFriend" class="row" friends-sidebar sidebarUsername="{{friendUserName}}"></div>-->
         </div>
     </div>
 

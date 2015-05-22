@@ -1,5 +1,11 @@
 socialNetwork.controller('ChangePasswordController',
     function ChangePasswordController($scope, $location, authentication, profileData, notify) {
+
+        if (!authentication.isLogged()) {
+            $location.path('/welcome');
+            return;
+        }
+
         $scope.changePassword = function(passwordData, changePasswordForm) {
             if (changePasswordForm.$valid) {
                 profileData.changePassword(passwordData)

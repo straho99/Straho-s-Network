@@ -5,6 +5,9 @@ socialNetwork.directive('friendsSidebar', function() {
         restrict: 'AE',
         templateUrl: 'partials/directives/friends-sidebar.html',
         controller: 'HomeController',
+        scope: {
+            sidebarUsername: "=sidebarUsername"
+        },
         replace: true
     }
 });

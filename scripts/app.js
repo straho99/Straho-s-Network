@@ -3,8 +3,6 @@ var socialNetwork = angular.module('socialNetwork', ['ngRoute', 'ui.bootstrap'])
 socialNetwork.config(['$routeProvider',
     function($routeProvider) {
 
-        //TODO: add checks if there is a logged user!
-
         $routeProvider.
             when('/welcome', {
                 templateUrl: 'partials/welcome.html',

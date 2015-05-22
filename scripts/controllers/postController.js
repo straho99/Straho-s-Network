@@ -34,6 +34,7 @@ socialNetwork.controller('PostController',
                 function successHandler(data) {
                     notify.info("Commented successfully.");
                     $scope.commentContent = '';
+                    $scope.post.comments.push(data);
                 },
                 function errorHandler(error) {
                     notify.error("Comment failed.");
@@ -43,6 +44,11 @@ socialNetwork.controller('PostController',
         };
 
         $scope.likePost = function () {
+
+            if (!verifyLikePostOperation()) {
+                notify.error("You can only like/unlike posts of your friends and posts on your wall.");
+            }
+
             postsData.likePostById($scope.post.id)
                 .then(
                 function successHandler(data) {
@@ -62,6 +68,11 @@ socialNetwork.controller('PostController',
         };
 
         $scope.unlikePost = function () {
+
+            if (!verifyLikePostOperation()) {
+                notify.error("You van only like/unlike posts of your friends and posts on your wall.");
+            }
+
             postsData.unlikePostById($scope.post.id)
                 .then(
                 function successHandler(data) {
@@ -103,6 +114,11 @@ socialNetwork.controller('PostController',
 
         $scope.deletePost = function () {
 
+            if (!verifyDeleteOperation($scope.post)) {
+                notify.error("Delete allowed for own posts and posts on own wall.");
+                return;
+            }
+
             postsData.deletePostById($scope.post.id)
                 .then(
                 function successHandler(data) {
@@ -117,6 +133,12 @@ socialNetwork.controller('PostController',
 
 
         $scope.open = function (modalName) {
+
+            if (!verifyEditOperation($scope.post)) {
+                notify.error("Edit allowed for own posts only.");
+                return;
+            }
+
             var modalInstance = $modal.open({
                 templateUrl: 'partials/directives/edit-posting.html',
                 controller: 'EditPostingController',
@@ -144,5 +166,41 @@ socialNetwork.controller('PostController',
                     console.log('Modal dismissed at: ' + new Date());
                 });
         };
+
+        function verifyDeleteOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            if (currentUser === posting.wallOwner.username) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyEditOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyLikePostOperation() {
+            if ($scope.post.author.isFriend) {
+                return true;
+            }
+
+            if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            return false;
+        }
 
     });

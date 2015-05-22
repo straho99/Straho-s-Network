@@ -8,7 +8,8 @@ socialNetwork.directive('postToUser', function() {
         controller: 'PostToUserController',
         replace: false,
         scope: {
-            test2: "@test2"
+            test2: "@test2",
+            friend: "@friend"
         }
     }
 });

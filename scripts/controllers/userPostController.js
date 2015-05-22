@@ -1,5 +1,5 @@
 socialNetwork.controller('UserPostController',
-    function PostController($scope, $document, authentication, postsData, commentsData, usersData, profileData, notify) {
+    function PostController($scope, $document, $modal, authentication, postsData, commentsData, usersData, profileData, notify) {
 
         $scope.isUserPreviewVisible = false;
         $scope.showComments = false;
@@ -19,11 +19,18 @@ socialNetwork.controller('UserPostController',
         );
 
         $scope.addComment = function () {
+
+            if (!verifyCommentOperation()) {
+                notify.error("You can only comment on posts of your friends their walls.");
+                return;
+            }
+
             commentsData.addCommentToPost($scope.post.id, $scope.commentContent)
                 .then(
                 function successHandler(data) {
                     notify.info("Commented successfully.");
                     $scope.commentContent = '';
+                    $scope.post.comments.push(data);
                 },
                 function errorHandler(error) {
                     notify.error("Comment failed.");
@@ -33,6 +40,12 @@ socialNetwork.controller('UserPostController',
         };
 
         $scope.likePost = function () {
+
+            if (!verifyLikePostOperation()) {
+                notify.error("You can only like/unlike posts of your friends and posts on your wall.");
+                return;
+            }
+
             postsData.likePostById($scope.post.id)
                 .then(
                 function successHandler(data) {
@@ -52,6 +65,12 @@ socialNetwork.controller('UserPostController',
         };
 
         $scope.unlikePost = function () {
+
+            if (!verifyLikePostOperation()) {
+                notify.error("You can only like/unlike posts of your friends and posts on your wall.");
+                return;
+            }
+
             postsData.unlikePostById($scope.post.id)
                 .then(
                 function successHandler(data) {
@@ -90,4 +109,107 @@ socialNetwork.controller('UserPostController',
         $scope.toggleComments = function () {
             $scope.showComments = !$scope.showComments;
         };
+
+        $scope.deletePost = function () {
+
+            if (!verifyDeleteOperation($scope.post)) {
+                notify.error("Delete allowed for own posts and posts on own wall.");
+                return;
+            }
+
+            postsData.deletePostById($scope.post.id)
+                .then(
+                function successHandler(data) {
+                    notify.info("Post deleted.");
+                    $scope.$emit('deletePost', $scope.post);
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+
+
+        $scope.open = function (modalName) {
+
+            if (!verifyEditOperation($scope.post)) {
+                notify.error("Edit allowed for own posts only.");
+                return;
+            }
+
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/directives/edit-posting.html',
+                controller: 'EditPostingController',
+                resolve: {
+                    'posting': function () {
+                        return $scope.post;
+                    }
+                }
+            });
+
+            modalInstance.result.then(
+                function edit(response) {
+                    postsData.editPostById(response, $scope.post.id)
+                        .then(
+                        function successHandler(data) {
+                            $scope.post.postContent = response;
+                            notify.info("Post edited.");
+                        },
+                        function (error) {
+
+                        }
+                    );
+                },
+                function cancelEdit() {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+        };
+
+        function verifyDeleteOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            if (currentUser === posting.wallOwner.username) {
+                return true;
+            }
+
+            return false;
+        };
+
+        function verifyEditOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyLikePostOperation() {
+            if ($scope.post.author.isFriend) {
+                return true;
+            }
+
+            if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyCommentOperation() {
+            if ($scope.post.author.isFriend) {
+                return true;
+            }
+
+            if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            return false;
+        }
     });

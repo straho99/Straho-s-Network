@@ -1,5 +1,11 @@
 socialNetwork.controller('HomeController',
-    function HomeController($scope, authentication, postsData, profileData, notify) {
+    function HomeController($scope, $location, authentication, postsData, profileData, notify) {
+
+        if (!authentication.isLogged()) {
+            $location.path('/welcome');
+            return;
+        }
+
         $scope.name = authentication.getName();
         $scope.username = authentication.getUserName();
         $scope.isUserPreviewVisible = false;
@@ -34,7 +40,7 @@ socialNetwork.controller('HomeController',
                 function successHandler(data) {
                     notify.info("Post successful.");
                     $scope.postContent = '';
-                    //TODO: refresh page.
+                    $scope.posts.push(data);
                 },
                 function errorHandler(error) {
                     console.log(error);

@@ -1,5 +1,11 @@
 socialNetwork.controller('EditProfileController',
     function EditProfileController($scope, $location, authentication, profileData, notify) {
+
+        if (!authentication.isLogged()) {
+            $location.path('/welcome');
+            return;
+        }
+
         profileData.getDataAboutMe()
             .then(
             function successHandler(data) {
