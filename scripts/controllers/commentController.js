@@ -1,11 +1,21 @@
 socialNetwork.controller('CommentController',
-    function CommentController($scope, authentication, commentsData, notify) {
+    function CommentController($scope, authentication, commentsData, usersData, profileData, notify) {
 
         $scope.isUserPreviewVisible = false;
 
         $scope.showReplyForm = function () {
             $scope.replyFormVisible = !$scope.replyFormVisible;
         };
+
+        usersData.getUserPreviewData($scope.comment.author.username)
+            .then(
+            function successHandler(data) {
+                $scope.commenterData = data;
+            },
+            function errorHandler(error) {
+                console.log(error);
+            }
+        );
 
         $scope.addComment = function () {
             commentsData.addCommentToPost($scope.post.id, $scope.replyContent)
@@ -19,7 +29,7 @@ socialNetwork.controller('CommentController',
                     notify.error("Comment failed.");
                 }
             );
-        }
+        };
 
         $scope.likeComment = function (commentObject) {
             commentsData.likeComment($scope.post.id, commentObject.id)
@@ -61,5 +71,18 @@ socialNetwork.controller('CommentController',
 
         $scope.previewUser = function () {
             $scope.isUserPreviewVisible = true;
+        };
+
+        $scope.inviteFriend = function () {
+            profileData.sendFriendRequest($scope.comment.author.username)
+                .then(
+                function successHandler(data) {
+                    notify.info("Invitation sent.")
+                    console.log(data);
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
         };
     });

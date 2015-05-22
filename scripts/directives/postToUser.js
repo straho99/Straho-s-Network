@@ -4,11 +4,11 @@ socialNetwork.directive('postToUser', function() {
 
     return {
         restrict: 'A',
-        templateUrl: 'partials/directives/user-friends-sidebar.html',
-        controller: 'UserFriendsController',
+        templateUrl: 'partials/directives/post-to-user.html',
+        controller: 'PostToUserController',
         replace: false,
         scope: {
-            friendUserName: "@friendUserName"
+            test2: "@test2"
         }
     }
 });

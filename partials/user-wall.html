@@ -9,7 +9,9 @@
         </div>
         <div class="col-md-10">
             <div class="row"><h1 class="pull-left">{{user.name}}</h1></div>
-            <div class="row"><button class="btn btn-success btn-sm pull-left" ng-click="">{{user.username}}</button></div>
+            <div class="row"><button class="btn btn-success btn-sm pull-left" ng-show="user.isFriend">Friend</button></div>
+            <div class="row"><button class="btn btn-danger btn-sm pull-left" ng-show="!user.isFriend && !user.hasPendingRequest" ng-click="inviteFriend()">Invite</button></div>
+            <div class="row"><button class="btn btn-warning btn-sm pull-left" ng-show="user.hasPendingRequest">Pending</button></div>
         </div>
 
     </div>
@@ -26,12 +28,11 @@
         <div class="col-md-1"></div>
 
         <div class="col-md-4">
-            <div class="row" user-friends-sidebar test="{{friendUserName}}">
-
+            <div class="row">
+                <div post-to-user test2="{{friendUserName}}"></div>
             </div>
+            <div class="row" user-friends-sidebar test="{{friendUserName}}"></div>
         </div>
-        <!--&lt;!&ndash; Friends column&ndash;&gt;-->
-        <!--<div class="col-md-4" user-friends-sidebar test="{{friendUserName}}"></div>-->
     </div>
 
 </div>

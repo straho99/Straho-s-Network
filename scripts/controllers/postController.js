@@ -1,12 +1,23 @@
 socialNetwork.controller('PostController',
-    function PostController($scope, $document, authentication, postsData, commentsData, notify) {
+    function PostController($scope, $document, authentication, postsData, commentsData, usersData, profileData, notify) {
 
         $scope.isUserPreviewVisible = false;
+        $scope.showComments = false;
 
         commentsData.getPostComments($scope.post.id)
             .then(
             function successHandler(data) {
                 $scope.post.comments = data;
+            },
+            function errorHandler(error) {
+                console.log(error);
+            }
+        );
+
+        usersData.getUserPreviewData($scope.post.author.username)
+            .then(
+            function successHandler(data) {
+                $scope.posterData = data;
             },
             function errorHandler(error) {
                 console.log(error);
@@ -71,5 +82,22 @@ socialNetwork.controller('PostController',
 
         $scope.previewUser = function () {
             $scope.isUserPreviewVisible = true;
+        };
+
+        $scope.inviteFriend = function () {
+            profileData.sendFriendRequest($scope.post.author.username)
+                .then(
+                function successHandler(data) {
+                    notify.info("Invitation sent.")
+                    console.log(data);
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+        
+        $scope.toggleComments = function () {
+            $scope.showComments = !$scope.showComments;
         };
     });

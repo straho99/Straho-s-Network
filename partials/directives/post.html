@@ -5,13 +5,23 @@
             <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
-            <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true" click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>
+            <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true"
+               click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>
 
             <!-- User preview element-->
             <div class="user-preview-container" ng-show="isUserPreviewVisible">
-                <img ng-src="{{post.author.profileImageData}}" alt="{{post.author.name}}"/><br/>
-                <p><span>{{post.author.name}}</span><br/>
-                <span><img ng-src="{{post.author.gender | gender}}"/></span></p>
+                <img ng-src="{{posterData.profileImageData}}" alt="{{posterData.name}}"/><br/>
+
+                <p><span>{{posterData.name}}</span><br/>
+                    <span><img ng-src="{{posterData.gender | gender}}"/></span></p>
+                    <button class="btn btn-success btn-sm center-block" ng-show="posterData.isFriend">Friend</button>
+                    <button class="btn btn-danger btn-sm center-block" ng-click="inviteFriend()"
+                            ng-show="!posterData.isFriend && !posterData.hasPendingRequest">
+                        Invite
+                    </button>
+                    <button class="btn btn-warning btn-sm center-block" ng-show="posterData.hasPendingRequest">Pending
+                    </button>
+
             </div>
             <!-- End User preview element-->
             <br/>
@@ -29,7 +39,11 @@
             <a href=""> {{post.likesCount}} people liked this</a> -
             <a href="" ng-hide="post.liked" ng-click="likePost()">Like</a>
             <a href="" ng-show="post.liked" ng-click="unlikePost()">Unlike</a>
-            <a href="" ng-click="showCommentForm()" class="pull-right">Comment</a>
+            <span class="pull-right">
+                <a href="" ng-click="toggleComments()">{{post.comments.length}} comment(s)</a>&nbsp;
+                <a href="" ng-click="showCommentForm()">Comment</a>
+            </span>
+
 
         </td>
     </tr>
@@ -49,7 +63,7 @@
         </td>
     </tr>
 
-    <tr class="comment" ng-repeat="comment in post.comments | orderBy: 'date'" ng-cloak=""></tr>
+    <tr class="comment" ng-repeat="comment in post.comments | orderBy: 'date'" ng-cloak ng-show="showComments"></tr>
 
     </tbody>
 </table>
