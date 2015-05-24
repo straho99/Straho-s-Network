@@ -63,7 +63,11 @@ socialNetwork.controller('UserHeaderController',
             profileData.approveFriendRequest(request.id)
                 .then(
                 function successHandler(data) {
+                    var index = $scope.requests.indexOf(request);
+                    $scope.requests.splice(index, 1);
+                    $scope.requestsCount--;
                     notify.info("Friend request accepted.");
+
                 },
                 function errorHandler(error) {
                     console.log(error);
@@ -75,6 +79,9 @@ socialNetwork.controller('UserHeaderController',
             profileData.rejectFriendRequest(request.id)
                 .then(
                 function successHandler(data) {
+                    var index = $scope.requests.indexOf(request);
+                    $scope.requests.splice(index, 1);
+                    $scope.requestsCount--;
                     notify.error("Friend request rejected.");
                 },
                 function errorHandler(error) {

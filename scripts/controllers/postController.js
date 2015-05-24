@@ -99,6 +99,7 @@ socialNetwork.controller('PostController',
             profileData.sendFriendRequest($scope.post.author.username)
                 .then(
                 function successHandler(data) {
+                    $scope.posterData.hasPendingRequest = true;
                     notify.info("Invitation sent.");
                     console.log(data);
                 },

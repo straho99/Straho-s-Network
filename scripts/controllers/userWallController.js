@@ -44,8 +44,9 @@ socialNetwork.controller('UserWallController',
             profileData.sendFriendRequest($routeParams.username)
                 .then(
                 function successHandler(data) {
+                    $scope.user.hasPendingRequest = true;
+
                     notify.info("Invitation sent.")
-                    console.log(data);
                 },
                 function errorHandler(error) {
                     console.log(error);
