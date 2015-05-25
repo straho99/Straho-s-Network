@@ -1,7 +1,11 @@
 socialNetwork.controller('UserHeaderController',
     function UserHeaderController($scope, $location, authentication, usersData, profileData, notify) {
+        var searchX,
+            searchY;
+
         $scope.username = authentication.getUserName();
         $scope.areFriendRequestsVisible = false;
+        $scope.areSearchResultsVisible = false;
 
         usersData.getUserPreviewData($scope.username)
             .then(
@@ -89,4 +93,60 @@ socialNetwork.controller('UserHeaderController',
                 }
             );
         };
+
+        $scope.searchPeople = function (keyword) {
+            if(keyword.length == 0) {
+                $scope.areSearchResultsVisible = false;
+                return;
+            }
+
+            usersData.searchUsersByName(keyword)
+                .then(
+                function successHandler(data) {
+                    $scope.people = data;
+                    $scope.peopleCount = data.length;
+                    $scope.showSearchResults();
+                    console.log(data);
+                },
+                function (error) {
+                    console.log(error);
+                }
+            );
+        };
+
+        $scope.setCoordinates = function ($event) {
+            searchX = $event.srcElement.offsetLeft;
+            searchY = $event.srcElement.offsetTop;
+        };
+
+        $scope.showSearchResults = function ($event, keyword) {
+
+            console.log();
+
+            if(keyword.length == 0) {
+                $scope.areSearchResultsVisible = false;
+                return;
+            }
+
+            usersData.searchUsersByName(keyword)
+                .then(
+                function successHandler(data) {
+                    $scope.people = data;
+                    $scope.peopleCount = data.length;
+
+                    var leftPosition = searchX,
+                        topPosition = searchY + 40,
+                        container = document.getElementById('peopleSearchContainer');
+
+                    container.style.top = topPosition + 'px';
+                    container.style.left = leftPosition + 'px';
+
+                    $scope.areSearchResultsVisible = true;
+                },
+                function (error) {
+                    console.log(error);
+                }
+            );
+        };
+
     });

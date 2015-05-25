@@ -1,13 +1,13 @@
 <tr>
     <td>
-        <img class="img-thumbnail" ng-src="{{comment.author.profileImageData}}" alt=""/>
+        <img class="img-thumbnail" ng-src="{{comment.author.profileImageData || 'img/noavatar.jpg'}}" alt=""/>
     </td>
     <td>
         <a href="#/users/{{comment.author.username}}" ng-mouseover="isUserPreviewVisible=true" click-anywhere="isUserPreviewVisible=false">{{comment.author.name}}</a>
 
         <!-- User preview element-->
         <div class="user-preview-container" ng-show="isUserPreviewVisible">
-            <img ng-src="{{commenterData.profileImageData}}" alt="{{commenterData.name}}"/><br/>
+            <img ng-src="{{commenterData.profileImageData || 'img/noavatar.jpg'}}" alt="{{commenterData.name}}"/><br/>
             <p><span>{{commenterData.name}}</span><br/>
                 <span><img ng-src="{{commenterData.gender | gender}}"/></span></p>
             <button class="btn btn-success btn-sm center-block" ng-show="commenterData.isFriend">Friend</button>

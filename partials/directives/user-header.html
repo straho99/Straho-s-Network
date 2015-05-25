@@ -25,7 +25,7 @@
                             <table>
                                 <tr ng-repeat="request in requests">
                                     <td>
-                                        <img class="img-thumbnail img-thumbnail-small" ng-src="{{request.user.profileImageData}}"/>
+                                        <img class="img-thumbnail img-thumbnail-small" ng-src="{{request.user.profileImageData || 'img/noavatar.jpg'}}"/>
                                     </td>
                                     <td>
                                         <h6>{{request.user.name}}</h6>
@@ -44,9 +44,26 @@
                     </ul>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="keyword" ng-change="showSearchResults($event, keyword)" ng-focus="setCoordinates($event)">
                         </div>
                     </form>
+
+                    <!-- People search element-->
+                    <div class="friend-requests-container" id="peopleSearchContainer" ng-show="areSearchResultsVisible" click-anywhere="areSearchResultsVisible=false">
+                        <table>
+                            <tr ng-repeat="man in people">
+                                <td>
+                                    <img class="img-thumbnail img-thumbnail-small" ng-src="{{man.profileImageData || 'img/noavatar.jpg'}}"/>
+                                </td>
+                                <td>
+                                    <h6><a href="#/users/{{man.username}}">{{man.name}}</a></h6>
+                                </td>
+                            </tr>
+                            <tr>{{peopleCount}} people found</tr>
+                        </table>
+                    </div>
+                    <!-- End of Friend requests element-->
+
                 </div>
 
 

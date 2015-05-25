@@ -2,7 +2,7 @@
     <thead>
     <tr>
         <th>
-            <img ng-src="{{post.author.profileImageData}}" class="img-rounded img-thumbnail"/>
+            <img ng-src="{{post.author.profileImageData || 'img/noavatar.jpg'}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
 
@@ -21,7 +21,7 @@
 
             <!-- User preview element-->
             <div class="user-preview-container" ng-show="isUserPreviewVisible">
-                <img ng-src="{{posterData.profileImageData}}" alt="{{posterData.name}}"/><br/>
+                <img ng-src="{{posterData.profileImageData || 'img/noavatar.jpg'}}" alt="{{posterData.name}}"/><br/>
 
                 <p><span>{{posterData.name}}</span><br/>
                     <span><img ng-src="{{posterData.gender | gender}}"/></span></p>
@@ -59,6 +59,7 @@
         </td>
     </tr>
 
+    <!-- Comment form-->
     <tr ng-show="commentFormVisible">
         <td></td>
         <td>
@@ -73,8 +74,10 @@
             </form>
         </td>
     </tr>
+    <!-- End of comment form-->
 
+    <!-- Comments part-->
     <tr class="comment" ng-repeat="comment in post.comments | orderBy: 'date'" ng-cloak ng-show="showComments"></tr>
-
+    <!-- End of comments part-->
     </tbody>
 </table>
