@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="346e10eb-dbd9-40d1-99ce-d48dd75c9d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/all-friends.html" afterPath="$PROJECT_DIR$/partials/directives/all-friends.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/change-password.html" afterPath="$PROJECT_DIR$/partials/change-password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/comment.html" afterPath="$PROJECT_DIR$/partials/directives/comment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/commentController.js" afterPath="$PROJECT_DIR$/scripts/controllers/commentController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/edit-profile.html" afterPath="$PROJECT_DIR$/partials/edit-profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/friends.html" afterPath="$PROJECT_DIR$/partials/friends.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/friendsController.js" afterPath="$PROJECT_DIR$/scripts/controllers/friendsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/home.html" afterPath="$PROJECT_DIR$/partials/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/notify.js" afterPath="$PROJECT_DIR$/scripts/services/notify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/post.html" afterPath="$PROJECT_DIR$/partials/directives/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/postController.js" afterPath="$PROJECT_DIR$/scripts/controllers/postController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/user-header.html" afterPath="$PROJECT_DIR$/partials/directives/user-header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/user-wall.html" afterPath="$PROJECT_DIR$/partials/user-wall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="346e10eb-dbd9-40d1-99ce-d48dd75c9d3c" name="Default" comment="" />
     <ignored path="Straho's Network.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
