@@ -1,12 +1,12 @@
 socialNetwork.controller('FriendsController',
     function FriendsController($scope, $routeParams, authentication, profileData, usersData) {
 
-        $scope.currentUser = authentication.getName();
-        $scope.user = $routeParams['username'];
+        $scope.currentUser = authentication.getUserName();
+        $scope.otherUser = $routeParams['username'];
 
-        if ($scope.currentUser === $scope.user) {
+        if ($scope.currentUser === $scope.otherUser) {
 
-            $scope.name = $scope.currentUser;
+            $scope.otherUserName = $scope.currentUser;
 
             profileData.getOwnFriends()
                 .then(
@@ -20,11 +20,11 @@ socialNetwork.controller('FriendsController',
             );
         } else {
 
-            usersData.getUserPreviewData($scope.user)
+            usersData.getUserPreviewData($scope.otherUser)
                 .then(
                 function successHandler(data) {
-                    $scope.name = data.name;
-                    usersData.getFriendsDetailedFriendsList($scope.user)
+                    $scope.otherUserName = data.name;
+                    usersData.getFriendsDetailedFriendsList($scope.otherUser)
                         .then(
                         function successHandler(data) {
                             $scope.friends = data;

@@ -29,6 +29,15 @@ table {
     margin-right: 1%;
 }
 
+.page-title {
+    background-color: #f1e6b1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 20px grey;
+    padding: 3px;
+}
+
 .angular {
     font-family: "Helvetica Neue";
     color: red;

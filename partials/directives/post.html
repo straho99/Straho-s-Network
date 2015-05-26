@@ -5,7 +5,7 @@
             <img ng-src="{{post.author.profileImageData || 'img/noavatar.jpg'}}" class="img-rounded img-thumbnail"/>
         </th>
         <th>
-
+            <!-- Post actions menu-->
             <div class="btn-group btn-group-sm pull-right">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     Edit <span class="caret"></span>
@@ -15,6 +15,7 @@
                     <li><a href="" ng-click="deletePost()">Delete post</a></li>
                 </ul>
             </div>
+            <!-- End of Posts actions menu-->
 
             <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true"
                click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>

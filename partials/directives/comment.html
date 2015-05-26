@@ -3,6 +3,19 @@
         <img class="img-thumbnail" ng-src="{{comment.author.profileImageData || 'img/noavatar.jpg'}}" alt=""/>
     </td>
     <td>
+
+        <!-- Comment actions menu-->
+        <div class="btn-group btn-group-sm pull-right">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Edit <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="" ng-click="open()">Edit comment</a></li>
+                <li><a href="" ng-click="deleteComment()">Delete comment</a></li>
+            </ul>
+        </div>
+        <!-- End of Comment actions menu-->
+
         <a href="#/users/{{comment.author.username}}" ng-mouseover="isUserPreviewVisible=true" click-anywhere="isUserPreviewVisible=false">{{comment.author.name}}</a>
 
         <!-- User preview element-->

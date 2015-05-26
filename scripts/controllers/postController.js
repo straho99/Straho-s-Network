@@ -168,6 +168,15 @@ socialNetwork.controller('PostController',
                 });
         };
 
+        $scope.$on('deleteComment', function(event, data) {
+            var index = $scope.post.comments.indexOf(data);
+
+            if (index > -1) {
+                $scope.post.comments.splice(index, 1);
+            }
+        });
+
+
         function verifyDeleteOperation(posting) {
             var currentUser = authentication.getUserName();
 

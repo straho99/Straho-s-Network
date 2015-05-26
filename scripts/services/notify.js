@@ -17,11 +17,11 @@ socialNetwork.factory('notify', function () {
     }
 
     service.info = function (message) {
-        display('success', message, 1500);
+        display('success', message, 2100);
     };
 
     service.error = function (message) {
-        display('error', message, 1500);
+        display('error', message, 2100);
     };
 
     return service;

@@ -1,5 +1,5 @@
 socialNetwork.controller('CommentController',
-    function CommentController($scope, authentication, commentsData, usersData, profileData, notify) {
+    function CommentController($scope, $modal, authentication, commentsData, usersData, profileData, notify) {
 
         $scope.isUserPreviewVisible = false;
 
@@ -20,7 +20,7 @@ socialNetwork.controller('CommentController',
         $scope.addComment = function () {
 
             if (!verifyCommentOperation()) {
-                notify.error("You can only comment on posts of your friends their walls.");
+                notify.error("You can only comment on posts of your friends or posts on their walls.");
                 return;
             }
 
@@ -39,6 +39,12 @@ socialNetwork.controller('CommentController',
         };
 
         $scope.likeComment = function (commentObject) {
+
+            if (!verifyCommentOperation()) {
+                notify.error("You can only like comments of your friends or comments on friends' walls.");
+                return;
+            }
+
             commentsData.likeComment($scope.post.id, commentObject.id)
                 .then(
                 function successHandler(data) {
@@ -84,7 +90,8 @@ socialNetwork.controller('CommentController',
             profileData.sendFriendRequest($scope.comment.author.username)
                 .then(
                 function successHandler(data) {
-                    notify.info("Invitation sent.")
+                    notify.info("Invitation sent.");
+                    $scope.commenterData.hasPendingRequest = true;
                     console.log(data);
                 },
                 function errorHandler(error) {
@@ -93,12 +100,91 @@ socialNetwork.controller('CommentController',
             );
         };
 
+        $scope.deleteComment = function () {
+
+            if (!verifyDeleteOperation($scope.comment)) {
+                notify.error("Delete allowed for own comments.");
+                return;
+            }
+
+            commentsData.deletePostComment($scope.post.id, $scope.comment.id)
+                .then(
+                function successHandler(data) {
+                    notify.info("Comment deleted.");
+                    $scope.$root.$broadcast('deleteComment', $scope.comment);
+
+                },
+                function errorHandler(error) {
+                    console.log(error);
+                }
+            );
+        };
+
+        $scope.open = function (modalName) {
+
+            if (!verifyEditOperation($scope.comment)) {
+                notify.error("Edit allowed for own comments only.");
+                return;
+            }
+
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/directives/edit-posting.html',
+                controller: 'EditPostingController',
+                resolve: {
+                    'posting': function () {
+                        return $scope.comment;
+                    }
+                }
+            });
+
+            modalInstance.result.then(
+                function edit(response) {
+                    commentsData.editPostComment($scope.post.id, $scope.comment.id, response)
+                        .then(
+                        function successHandler(data) {
+                            $scope.comment.commentContent = response;
+                            notify.info("Comment edited.");
+                        },
+                        function (error) {
+
+                        }
+                    );
+                },
+                function cancelEdit() {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+        };
+
         function verifyCommentOperation() {
             if ($scope.post.author.isFriend) {
                 return true;
             }
 
             if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyDeleteOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            if (currentUser === $scope.post.author.username) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function verifyEditOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
                 return true;
             }
 
