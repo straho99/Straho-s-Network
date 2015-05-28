@@ -21,7 +21,7 @@ socialNetwork.controller('UserPostController',
         $scope.addComment = function () {
 
             if (!verifyCommentOperation()) {
-                notify.error("You can only comment on posts of your friends their walls.");
+                notify.error("You can only comment on posts of your friends or posts on friends' walls.");
                 return;
             }
 
@@ -41,7 +41,7 @@ socialNetwork.controller('UserPostController',
 
         $scope.likePost = function () {
 
-            if (!verifyLikePostOperation()) {
+            if (!verifyLikePostOperation($scope.post)) {
                 notify.error("You can only like/unlike posts of your friends and posts on your wall.");
                 return;
             }
@@ -66,7 +66,7 @@ socialNetwork.controller('UserPostController',
 
         $scope.unlikePost = function () {
 
-            if (!verifyLikePostOperation()) {
+            if (!verifyLikePostOperation($scope.post)) {
                 notify.error("You can only like/unlike posts of your friends and posts on your wall.");
                 return;
             }
@@ -168,10 +168,12 @@ socialNetwork.controller('UserPostController',
         function verifyDeleteOperation(posting) {
             var currentUser = authentication.getUserName();
 
+            //If it is an own post:
             if (currentUser === posting.author.username) {
                 return true;
             }
 
+            //If it is a post on the user's wall:
             if (currentUser === posting.wallOwner.username) {
                 return true;
             }
@@ -182,6 +184,7 @@ socialNetwork.controller('UserPostController',
         function verifyEditOperation(posting) {
             var currentUser = authentication.getUserName();
 
+            //If it is an own post:
             if (currentUser === posting.author.username) {
                 return true;
             }
@@ -189,7 +192,17 @@ socialNetwork.controller('UserPostController',
             return false;
         }
 
-        function verifyLikePostOperation() {
+        function verifyLikePostOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            if (currentUser === posting.wallOwner.username) {
+                return true;
+            }
+
             if ($scope.post.author.isFriend) {
                 return true;
             }

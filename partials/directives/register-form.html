@@ -7,14 +7,14 @@
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
         <label>Password:</label>
-        <input type="password" required name="password" class="form-control input-sm" ng-model="user.password">
-        <p ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="help-block">Password is missing.</p>
+        <input type="password" required ng-pattern="passwordPattern" name="password" class="form-control input-sm" ng-model="user.password">
+        <p ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="help-block">Password has to be minimum 6 symbols long.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine }">
         <label>Confirm password:</label>
-        <input type="password" required name="confirmPassword" class="form-control input-sm" ng-model="user.confirmPassword">
-        <p ng-show="registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine" class="help-block">Please, confirm the password.</p>
+        <input type="password" required ng-pattern="passwordPattern" name="confirmPassword" class="form-control input-sm" ng-model="user.confirmPassword">
+        <p ng-show="registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine" class="help-block">Password has to be minimum 6 symbols long.</p>
     </div>
 
     <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && !registerForm.name.$pristine }">

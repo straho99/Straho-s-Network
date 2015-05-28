@@ -21,7 +21,16 @@ socialNetwork.controller('ChangePasswordController',
             }
         };
 
+        $scope.passwordPattern = (function() {
+            var regexp = /.{6,}/;
+            return {
+                test: function(value) {
+                    return regexp.test(value);
+                }
+            };
+        })();
+
         $scope.cancelSave = function () {
             $location.path('/users/me');
-        }
+        };
     });

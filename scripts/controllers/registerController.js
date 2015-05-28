@@ -16,6 +16,15 @@ socialNetwork.controller('RegisterController',
             }
         };
 
+        $scope.passwordPattern = (function() {
+            var regexp = /.{6,}/;
+            return {
+                test: function(value) {
+                    return regexp.test(value);
+                }
+            };
+        })();
+
         $scope.cancelRegister = function () {
             $location.path('/welcome');
         }

@@ -45,8 +45,9 @@ socialNetwork.controller('PostController',
 
         $scope.likePost = function () {
 
-            if (!verifyLikePostOperation()) {
+            if (!verifyLikePostOperation($scope.post)) {
                 notify.error("You can only like/unlike posts of your friends and posts on your wall.");
+                return;
             }
 
             postsData.likePostById($scope.post.id)
@@ -69,8 +70,9 @@ socialNetwork.controller('PostController',
 
         $scope.unlikePost = function () {
 
-            if (!verifyLikePostOperation()) {
-                notify.error("You van only like/unlike posts of your friends and posts on your wall.");
+            if (!verifyLikePostOperation($scope.post)) {
+                notify.error("You can only like/unlike posts of your friends and posts on your wall.");
+                return;
             }
 
             postsData.unlikePostById($scope.post.id)
@@ -180,10 +182,12 @@ socialNetwork.controller('PostController',
         function verifyDeleteOperation(posting) {
             var currentUser = authentication.getUserName();
 
+            //If it is an own post:
             if (currentUser === posting.author.username) {
                 return true;
             }
 
+            //If it is a post on the user's wall:
             if (currentUser === posting.wallOwner.username) {
                 return true;
             }
@@ -194,6 +198,7 @@ socialNetwork.controller('PostController',
         function verifyEditOperation(posting) {
             var currentUser = authentication.getUserName();
 
+            //If it is an own post:
             if (currentUser === posting.author.username) {
                 return true;
             }
@@ -201,7 +206,17 @@ socialNetwork.controller('PostController',
             return false;
         }
 
-        function verifyLikePostOperation() {
+        function verifyLikePostOperation(posting) {
+            var currentUser = authentication.getUserName();
+
+            if (currentUser === posting.author.username) {
+                return true;
+            }
+
+            if (currentUser === posting.wallOwner.username) {
+                return true;
+            }
+
             if ($scope.post.author.isFriend) {
                 return true;
             }
