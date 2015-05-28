@@ -47,7 +47,9 @@ socialNetwork.controller('UserHeaderController',
 
                 },
                 function errorHandler(error) {
-                    notify.error("Logout failed.");
+                    notify.error("Session has expired.");
+                    authentication.clearCredentials();
+                    $location.path('/');
                 }
             );
         };

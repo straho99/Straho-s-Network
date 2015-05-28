@@ -2,7 +2,7 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: floralwhite !important;
+    background-color: #b0ea9c !important;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,6 +15,15 @@ h1 {
 p {
     margin-top: 6px;
     margin-bottom: 3px;
+}
+
+a {
+    color: white !important;
+}
+
+.menu-icon {
+    color: white;
+    font-size: 1.3em;
 }
 
 .caption {
@@ -34,21 +43,29 @@ table {
 }
 
 .page-title {
-    background-color: #f1ef88;
+    background-color: #479030;
     margin-bottom: 10px;
-    margin-top: 10px;
-    border: 1px solid black;
-    box-shadow: 0 0 20px grey;
+    margin-top: 0 !important;
     padding: 3px;
+    background-size: 100% 100%;
+    color: white;
+
+}
+
+.page-title-wall {
+    height: 150px !important;
+}
+
+.page-title-wall h1 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-weight: 700;
+    color: black;
 }
 
 .angular {
     font-family: "Helvetica Neue";
     color: red;
-}
-
-.menu-icon {
-    font-size: 1.3em;
 }
 
 .thumbnail {
@@ -68,11 +85,11 @@ table {
 }
 
 .posts-table tr {
-    background-color: #f3f3f3;
+    background-color: #98cb87;
 }
 
 .posts-table th, .posts-table tr:nth-child(1), .posts-table tr:nth-child(2), .posts-table tr:nth-child(3){
-    background-color: lightgray;
+    background-color: #70B45A;
 }
 
 .posts-table td:nth-child(1) {
@@ -118,11 +135,11 @@ table {
 }
 
 .friends-table th{
-    background-color: lightgray;
+    background-color: #479030;
 }
 
 .friends-table tr{
-    background-color: #f3f3f3;
+    background-color: #98cb87;
 }
 
 .friends-table td:nth-child(1){
@@ -133,20 +150,24 @@ table {
     display: block;
     margin: 0;
     padding: 2%;
-    background-color: #f3f3f3;
-    border: 1px solid darkgreen;
+    background-color: #A2D890;
+    border: 1px solid #114800;
     border-radius: 5px;
     position: absolute;
     width: auto !important;
     height: auto !important;
 }
 
+.names {
+    color: #286C12 !important;
+}
+
 .friend-requests-container {
     display: block;
     margin: 0;
     padding: 1%;
-    background-color: #f3f3f3;
-    border: 1px solid darkgreen;
+    background-color: #A2D890;
+    border: 1px solid #114800;
     border-radius: 5px;
     position: absolute;
     left: 33%
@@ -166,6 +187,18 @@ table {
     border-bottom: 1px solid darkgreen;
     border-top: 1px solid darkgreen;
     opacity: 1;
+}
+
+.user-header {
+    background-color: #286C12 !important;
+}
+
+.badge {
+    background-color: #A2D890 !important;
+}
+
+.button {
+    background-color: #A2D890;
 }
 
 
