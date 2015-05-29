@@ -17,7 +17,7 @@
             </div>
             <!-- End of Posts actions menu-->
 
-            <a href="#/users/{{post.author.username}}" ng-mouseover="isUserPreviewVisible=true"
+            <a href="#/users/{{post.author.username}}" ng-mouseover="previewUser()"
                click-anywhere="isUserPreviewVisible=false">{{post.author.name}}</a>
 
             <!-- User preview element-->
@@ -26,14 +26,10 @@
 
                 <p><span>{{posterData.name}}</span><br/>
                     <span><img ng-src="{{posterData.gender | gender}}"/></span></p>
-                    <button class="btn btn-success btn-sm center-block" ng-show="posterData.isFriend">Friend</button>
-                    <button class="btn btn-danger btn-sm center-block" ng-click="inviteFriend()"
-                            ng-show="!posterData.isFriend && !posterData.hasPendingRequest">
-                        Invite
-                    </button>
-                    <button class="btn btn-warning btn-sm center-block" ng-show="posterData.hasPendingRequest">Pending
-                    </button>
-
+                    <button class="btn btn-success btn-sm center-block ng-cloak" ng-show="posterData.isFriend">Friend</button>
+                    <button class="btn btn-danger btn-sm center-block ng-cloak" ng-click="inviteFriend()" ng-show="!posterData.isFriend && !posterData.hasPendingRequest">Invite</button>
+                    <button class="btn btn-warning btn-sm center-block ng-cloak" ng-show="posterData.hasPendingRequest && !isMe">Pending</button>
+                    <button class="btn btn-info btn-sm center-block ng-cloak" ng-show="isMe">Me</button>
             </div>
             <!-- End User preview element-->
             <br/>

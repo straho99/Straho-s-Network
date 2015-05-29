@@ -104,6 +104,7 @@ socialNetwork.controller('UserPostController',
 
         $scope.previewUser = function () {
             $scope.isUserPreviewVisible = true;
+            $scope.isMe = $scope.post.author.username === authentication.getUserName() ? true : false;
         };
 
         $scope.toggleComments = function () {

@@ -95,6 +95,7 @@ socialNetwork.controller('PostController',
 
         $scope.previewUser = function () {
             $scope.isUserPreviewVisible = true;
+            $scope.isMe = $scope.post.author.username === authentication.getUserName() ? true : false;
         };
 
         $scope.inviteFriend = function () {

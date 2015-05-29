@@ -16,7 +16,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><img id="me-preview" class="img-thumbnail profile-picture-header" ng-src="{{profileImageData || 'img/noavatar.jpg'}}"></li>
-                        <li><a class="menu-icon" href="#/users/{{username}}"><span>{{name}}</span></a></li>
+                        <li><a class="menu-icon ng-cloak" href="#/users/{{username}}"><span>{{name}}</span></a></li>
                         <li><a href="#users/me"><span class="glyphicon glyphicon-comment menu-icon"></span></a></li>
                         <li><a href="#" ng-click="showFriendRequests($event)" click-anywhere="areFriendRequestsVisible=false"><span class="glyphicon glyphicon-user menu-icon"></span><span ng-show="requestsCount" class="badge">{{requestsCount}}</span></a></li>
 
