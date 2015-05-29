@@ -5,10 +5,10 @@
 
     <!-- Wall owner header-->
     <div ng-cloak class="row page-title page-title-wall" style="background-image: url({{user.coverImageData}});">
-        <div class="col-md-2" ng-cloak>
+        <div class="col-md-2 col-xs-4" ng-cloak>
             <img ng-src="{{user.profileImageData || 'img/noavatar.jpg'}}" class="img-rounded img-thumbnail friend-preview-img"/>
         </div>
-        <div class="col-md-10" ng-cloak>
+        <div class="col-md-10 col-xs-8" ng-cloak>
             <div class="row"><h1 class="pull-left" ng-cloak>{{user.name}}</h1></div>
             <div class="row"><button ng-cloak class="btn btn-success btn-sm pull-left" ng-show="user.isFriend">Friend</button></div>
             <div class="row"><button ng-cloak class="btn btn-danger btn-sm pull-left" ng-show="!user.isFriend && !user.hasPendingRequest && !isMe" ng-click="inviteFriend()">Invite</button></div>
@@ -20,7 +20,7 @@
 
     <div class="row">
         <!-- Posts column-->
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-7">
             <p></p>
 
             <h3 ng-show="isNewsFeedEmpty">The news feed is empty.</h3>
@@ -31,7 +31,7 @@
         <div class="col-md-1"></div>
 
         <!-- Friends aside-->
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-5">
             <div class="row">
                 <div ng-if="user.isFriend" post-to-user test2="{{friendUserName}}" friend="{{friend}}"></div>
             </div>

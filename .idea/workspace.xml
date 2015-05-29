@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346e10eb-dbd9-40d1-99ce-d48dd75c9d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/change-password.html" afterPath="$PROJECT_DIR$/partials/change-password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/edit-profile.html" afterPath="$PROJECT_DIR$/partials/edit-profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/home.html" afterPath="$PROJECT_DIR$/partials/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/user-wall.html" afterPath="$PROJECT_DIR$/partials/user-wall.html" />
     </list>
     <ignored path="Straho's Network.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,12 +34,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-profile.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/partials/edit-profile.html">
+      <file leaf-file-name="user-wall.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/partials/user-wall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3652968">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="0.6347032">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,12 +99,10 @@
         <option value="$PROJECT_DIR$/scripts/controllers/registerController.js" />
         <option value="$PROJECT_DIR$/partials/directives/register-form.html" />
         <option value="$PROJECT_DIR$/partials/directives/change-password-form.html" />
-        <option value="$PROJECT_DIR$/partials/home.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/userHeaderController.js" />
         <option value="$PROJECT_DIR$/partials/directives/all-friends.html" />
         <option value="$PROJECT_DIR$/partials/directives/comment.html" />
         <option value="$PROJECT_DIR$/styles/main.css" />
-        <option value="$PROJECT_DIR$/partials/user-wall.html" />
         <option value="$PROJECT_DIR$/partials/directives/user-header.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/postController.js" />
         <option value="$PROJECT_DIR$/partials/directives/post.html" />
@@ -112,6 +112,8 @@
         <option value="$PROJECT_DIR$/partials/register.html" />
         <option value="$PROJECT_DIR$/partials/change-password.html" />
         <option value="$PROJECT_DIR$/partials/edit-profile.html" />
+        <option value="$PROJECT_DIR$/partials/home.html" />
+        <option value="$PROJECT_DIR$/partials/user-wall.html" />
       </list>
     </option>
   </component>
@@ -299,7 +301,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="edit&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;cha&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;logi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/login.html&#10;regis&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/register.html&#10;welco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/welcome.html&#10;home&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/home.html&#10;userwa&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userWallController.js&#10;post&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;heade&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;header&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userHeaderController.js&#10;homec&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;fri&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/all-friends.html&#10;main&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;pass&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/change-password-form.html&#10;wall&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/user-wall.html&#10;comme&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/commentController.js&#10;regist&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;chan&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;change&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;noti&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/notify.js&#10;userhe&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;ho&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;commeda&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/commentsData.js&#10;comco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/commentController.js&#10;postco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;all&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/all-friends.html&#10;frie&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/friends.html&#10;aut&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;userfr&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userFriendsController.js&#10;friend&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendsController.js&#10;friesi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/friends-sidebar.html&#10;head&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;edi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;hea&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;usewa&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userWallController.js&#10;user&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/user-wall.html&#10;inde&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;app&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/app.js&#10;userda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/usersData.js&#10;profi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;posda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/postsData.js&#10;authe&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;homeco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;prof&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;ind&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;po&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;hom&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;psoco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;ma&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;mai&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css" />
+    <property name="SearchEverywhereHistoryKey" value="userwa&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/user-wall.html&#10;home&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/home.html&#10;edit&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;cha&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;logi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/login.html&#10;regis&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/register.html&#10;welco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/welcome.html&#10;post&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;heade&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;header&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userHeaderController.js&#10;homec&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;fri&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/all-friends.html&#10;main&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;pass&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/change-password-form.html&#10;wall&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/user-wall.html&#10;comme&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/commentController.js&#10;regist&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/registerController.js&#10;chan&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;change&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/change-password.html&#10;noti&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/notify.js&#10;userhe&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;ho&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;commeda&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/commentsData.js&#10;comco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/commentController.js&#10;postco&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;all&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/all-friends.html&#10;frie&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/friends.html&#10;aut&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;userfr&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userFriendsController.js&#10;friend&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/friendsController.js&#10;friesi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/friends-sidebar.html&#10;head&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;edi&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/edit-profile.html&#10;hea&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/directives/user-header.html&#10;usewa&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/userWallController.js&#10;user&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/partials/user-wall.html&#10;inde&#9;FILE&#9;file:///Users/strahilruychev/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;app&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/app.js&#10;userda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/usersData.js&#10;profi&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;posda&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/postsData.js&#10;authe&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/authentication.js&#10;homeco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;prof&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/services/profileData.js&#10;ind&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/index.html&#10;po&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;hom&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/homeController.js&#10;psoco&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/scripts/controllers/postController.js&#10;ma&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css&#10;mai&#9;FILE&#9;file:///Users/Strahil/Documents/Dropbox/Personal/SoftUni/Level 2/JS Frameworks/course project/Straho's Network/styles/main.css" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -720,16 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/user-wall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30593607">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/userWallController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2863436">
@@ -750,14 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.69162995">
           <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -794,6 +778,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/partials/edit-profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3652968">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6392694">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-28.75">
@@ -802,11 +802,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/edit-profile.html">
+    <entry file="file://$PROJECT_DIR$/partials/user-wall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3652968">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding />
+        <state vertical-scroll-proportion="0.6347032">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
