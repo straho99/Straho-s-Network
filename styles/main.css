@@ -146,6 +146,10 @@ table {
     width: 20%;
 }
 
+.friend-container {
+    height: 170px;
+}
+
 .user-preview-container {
     display: block;
     margin: 0;
@@ -201,4 +205,10 @@ table {
     background-color: #A2D890;
 }
 
+.menu-item {
+    color: black !important;
+}
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
