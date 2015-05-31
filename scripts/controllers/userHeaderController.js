@@ -108,7 +108,6 @@ socialNetwork.controller('UserHeaderController',
                     $scope.people = data;
                     $scope.peopleCount = data.length;
                     $scope.showSearchResults();
-                    console.log(data);
                 },
                 function (error) {
                     console.log(error);
@@ -117,14 +116,11 @@ socialNetwork.controller('UserHeaderController',
         };
 
         $scope.setCoordinates = function ($event) {
-            searchX = $event.srcElement.offsetLeft;
-            searchY = $event.srcElement.offsetTop;
+            searchX = $event.currentTarget.offsetLeft;
+            searchY = $event.currentTarget.offsetTop;
         };
 
         $scope.showSearchResults = function ($event, keyword) {
-
-            console.log();
-
             if(keyword.length == 0) {
                 $scope.areSearchResultsVisible = false;
                 return;
@@ -150,5 +146,4 @@ socialNetwork.controller('UserHeaderController',
                 }
             );
         };
-
     });

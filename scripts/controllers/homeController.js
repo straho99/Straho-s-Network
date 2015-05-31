@@ -1,6 +1,11 @@
 socialNetwork.controller('HomeController',
     function HomeController($scope, $location, authentication, postsData, profileData, notify) {
 
+        var usedStartPostIds = [];
+
+        $scope.startPostId = "";
+        $scope.nextPageBlocked = true;
+
         if (!authentication.isLogged()) {
             $location.path('/welcome');
             return;
@@ -10,18 +15,50 @@ socialNetwork.controller('HomeController',
         $scope.username = authentication.getUserName();
         $scope.isUserPreviewVisible = false;
 
-        profileData.getNewsFeedPages("")
+        profileData.getNewsFeedPages($scope.startPostId)
             .then(
             function successHandler(data) {
                 $scope.posts = data;
+                $scope.startPostId = data[data.length - 1].id;
+                console.log("First id: " + $scope.startPostId);
                 if (data.length === 0) {
                     $scope.isNewsFeedEmpty = true;
                 }
+
+                $scope.nextPageBlocked = false;
             },
             function errorHandler(error) {
-                notify.error('Loading news feed failed.');
+                notify.error('Error loading news feed.');
             }
         );
+
+        $scope.nextPage = function () {
+
+            $scope.nextPageBlocked = true;
+
+            if (usedStartPostIds.indexOf($scope.startPostId) < 0) {
+
+                usedStartPostIds.push($scope.startPostId);
+
+                profileData.getNewsFeedPages($scope.startPostId)
+                    .then(
+                    function successHandler(data) {
+                        $scope.startPostId = data[data.length - 1].id;
+                        //console.log(usedStartPostIds);
+                        //console.log($scope.startPostId);
+
+                        for (var i = 0; i < data.length; i++) {
+                            $scope.posts.push(data[i]);
+                        }
+                    },
+                    function errorHandler(error) {
+                        notify.error('Error loading news feed.');
+                    }
+                );
+            }
+
+            $scope.nextPageBlocked = false;
+        };
 
         profileData.getOwnFriends()
             .then(

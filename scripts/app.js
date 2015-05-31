@@ -1,4 +1,4 @@
-var socialNetwork = angular.module('socialNetwork', ['ngRoute', 'ui.bootstrap']);
+var socialNetwork = angular.module('socialNetwork', ['ngRoute', 'ui.bootstrap', 'infinite-scroll']);
 
 socialNetwork.config(['$routeProvider',
     function($routeProvider) {
