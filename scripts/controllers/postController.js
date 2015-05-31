@@ -1,6 +1,8 @@
 socialNetwork.controller('PostController',
     function PostController($scope, $document, $modal, authentication, postsData, commentsData, usersData, profileData, notify) {
 
+        toLocalTimeZone($scope.post);
+
         $scope.isUserPreviewVisible = false;
         $scope.showComments = false;
 
@@ -227,6 +229,10 @@ socialNetwork.controller('PostController',
             }
 
             return false;
+        }
+
+        function toLocalTimeZone (post) {
+            post.date = new Date(post.date);
         }
 
     });

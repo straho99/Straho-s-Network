@@ -3,10 +3,15 @@
 socialNetwork.controller('UserWallController',
     function UserWallController($scope, authentication, $location, $routeParams, usersData, profileData, notify) {
 
+        var usedStartPostIds = [];
+
         if (!authentication.isLogged()) {
             $location.path('/welcome');
             return;
         }
+
+        $scope.startPostId = "";
+        $scope.nextPageBlocked = true;
 
         $scope.isMe = $routeParams.username === authentication.getUserName() ? true : false;
 
@@ -19,15 +24,18 @@ socialNetwork.controller('UserWallController',
                 $scope.user = data;
                 $scope.friend = data.isFriend;
 
-                usersData.getFriendWallByPages($routeParams.username, "")
+                usersData.getFriendWallByPages($routeParams.username, $scope.startPostId)
                     .then(
                     function successHandler(data) {
                         $scope.posts = data;
+                        $scope.startPostId = data[data.length - 1].id;
                         if (data.length == 0) {
                             $scope.isNewsFeedEmpty = true;
                         } else {
                             $scope.isNewsFeedEmpty = false;
                         }
+
+                        $scope.nextPageBlocked = false;
                     },
                     function errorHandler(error) {
                         console.log(error);
@@ -39,6 +47,35 @@ socialNetwork.controller('UserWallController',
                 $location.path("/users/me");
             }
         );
+
+        $scope.nextPage = function () {
+
+            $scope.nextPageBlocked = true;
+
+            if (usedStartPostIds.indexOf($scope.startPostId) < 0) {
+
+                usedStartPostIds.push($scope.startPostId);
+
+                usersData.getFriendWallByPages($routeParams.username, $scope.startPostId)
+                    .then(
+                    function successHandler(data) {
+                        if (data.length === 0) {
+                            return;
+                        }
+                        $scope.startPostId = data[data.length - 1].id;
+
+                        for (var i = 0; i < data.length; i++) {
+                            $scope.posts.push(data[i]);
+                        }
+                    },
+                    function errorHandler(error) {
+                        notify.error('Error loading news feed.');
+                    }
+                );
+            }
+
+            $scope.nextPageBlocked = false;
+        };
 
         $scope.inviteFriend = function () {
             profileData.sendFriendRequest($routeParams.username)

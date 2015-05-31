@@ -24,7 +24,9 @@
             <p></p>
 
             <h3 ng-show="isNewsFeedEmpty">The news feed is empty.</h3>
-            <user-post ng-repeat="post in posts | orderBy: '-date'"></user-post>
+            <div infinite-scroll="nextPage()" infinite-scroll-distance="1" infinite-scroll-disabled="nextPageBlocked">
+                <user-post ng-repeat="post in posts"></user-post>
+            </div>
         </div>
         <!-- End of posts-->
 

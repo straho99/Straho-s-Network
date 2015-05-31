@@ -20,7 +20,6 @@ socialNetwork.controller('HomeController',
             function successHandler(data) {
                 $scope.posts = data;
                 $scope.startPostId = data[data.length - 1].id;
-                console.log("First id: " + $scope.startPostId);
                 if (data.length === 0) {
                     $scope.isNewsFeedEmpty = true;
                 }
@@ -44,8 +43,6 @@ socialNetwork.controller('HomeController',
                     .then(
                     function successHandler(data) {
                         $scope.startPostId = data[data.length - 1].id;
-                        //console.log(usedStartPostIds);
-                        //console.log($scope.startPostId);
 
                         for (var i = 0; i < data.length; i++) {
                             $scope.posts.push(data[i]);

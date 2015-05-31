@@ -1,6 +1,8 @@
 socialNetwork.controller('CommentController',
     function CommentController($scope, $modal, authentication, commentsData, usersData, profileData, notify) {
 
+        toLocalTimeZone($scope.comment);
+
         $scope.isUserPreviewVisible = false;
 
         $scope.showReplyForm = function () {
@@ -189,5 +191,9 @@ socialNetwork.controller('CommentController',
             }
 
             return false;
+        }
+
+        function toLocalTimeZone (post) {
+            post.date = new Date(post.date);
         }
     });

@@ -148,6 +148,7 @@ table {
 
 .friend-container {
     height: 170px;
+    overflow: hidden;
 }
 
 .user-preview-container {
