@@ -94,7 +94,6 @@ socialNetwork.controller('CommentController',
                 function successHandler(data) {
                     notify.info("Invitation sent.");
                     $scope.commenterData.hasPendingRequest = true;
-                    console.log(data);
                 },
                 function errorHandler(error) {
                     console.log(error);
@@ -113,6 +112,7 @@ socialNetwork.controller('CommentController',
                 .then(
                 function successHandler(data) {
                     notify.info("Comment deleted.");
+                    $scope.commentContent = '';
                     $scope.$root.$broadcast('deleteComment', $scope.comment);
 
                 },
@@ -163,6 +163,10 @@ socialNetwork.controller('CommentController',
             }
 
             if ($scope.post.wallOwner.isFriend) {
+                return true;
+            }
+
+            if ($scope.post.author.username === authentication.getUserName()) {
                 return true;
             }
 

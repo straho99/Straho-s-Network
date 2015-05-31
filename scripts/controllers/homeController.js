@@ -74,7 +74,7 @@ socialNetwork.controller('HomeController',
                 function successHandler(data) {
                     notify.info("Post successful.");
                     $scope.postContent = '';
-                    $scope.posts.push(data);
+                    //$scope.posts.push(data);
                 },
                 function errorHandler(error) {
                     console.log(error);

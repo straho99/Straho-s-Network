@@ -6,7 +6,8 @@ socialNetwork.filter('gender', function() {
         switch (input) {
             case 1: return "img/male.png"; break;
             case 2: return "img/female.png"; break;
-            //case 3: return "img/transgender.png"; break;
+            case 3: return "img/transgender.png"; break;
+            default: return "img/transgender.png"; break;
         }
     }
 });

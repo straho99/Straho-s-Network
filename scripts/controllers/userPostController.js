@@ -232,6 +232,10 @@ socialNetwork.controller('UserPostController',
                 return true;
             }
 
+            if ($scope.post.author.username === authentication.getUserName()) {
+                return true;
+            }
+
             return false;
         }
     });
